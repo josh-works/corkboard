@@ -19,7 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda-callback-matchers', '~> 1.1.1'
@@ -29,6 +28,7 @@ end
 group :development, :test do
   gem 'awesome_print', require: 'ap'
   gem 'byebug', platform: :mri
+  gem 'faker'
   gem 'factory_girl_rails'
   gem 'rack_session_access'
   gem 'rspec-rails'
