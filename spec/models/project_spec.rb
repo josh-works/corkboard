@@ -28,6 +28,14 @@ RSpec.describe Project, type: :model do
     it 'is open by default' do
       expect(Project.new.status).to eq('open')
     end
+
+    it { should define_enum_for(:timeline).with(['ASAP',
+                                                 'Within 2 Weeks',
+                                                 'Within 2 Months',
+                                                 'Whenever']) }
+    it 'is ASAP by default' do
+      expect(Project.new.timeline).to eq('ASAP')
+    end
   end
 
   describe 'ActiveRecord Associations' do

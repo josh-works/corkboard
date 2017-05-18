@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   validates :status, presence: true
 
   enum status: [:open, :accepted, :closed]
+  enum timeline: ['ASAP', 'Within 2 Weeks', 'Within 2 Months', 'Whenever']
 end
