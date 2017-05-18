@@ -23,6 +23,13 @@ RSpec.describe Project, type: :model do
     it { expect(project).to respond_to(:description) }
   end
 
+  describe 'enums' do
+    it { should define_enum_for(:status).with([:open, :accepted, :closed]) }
+    it 'is open by default' do
+      expect(Project.new.status).to eq('open')
+    end
+  end
+
   describe 'ActiveRecord Associations' do
   end
 

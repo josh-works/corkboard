@@ -3,4 +3,6 @@ class Project < ApplicationRecord
   validates :timeline, presence: true
   validates :description, presence: true
   validates :status, presence: true
+
+  enum status: [:open, :accepted, :closed]
 end
