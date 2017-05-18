@@ -6,6 +6,8 @@ FactoryGirl.define do
     recurring Faker::Boolean.boolean
     timeline 0
     description Faker::Hipster.paragraph(2)
+    requester
+    service
   end
   
 end

@@ -6,4 +6,7 @@ class Project < ApplicationRecord
 
   enum status: [:open, :accepted, :closed]
   enum timeline: ['ASAP', 'Within 2 Weeks', 'Within 2 Months', 'Whenever']
+
+  belongs_to :requester, :class_name => 'User'
+  belongs_to :service
 end
