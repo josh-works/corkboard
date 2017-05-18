@@ -19,5 +19,7 @@ RSpec.describe Role, type: :model do
   end
 
   describe 'ActiveRecord Associations' do
+    it { expect(role).to have_many(:user_roles) }
+    it { expect(role).to have_many(:users) }
   end
 end

@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     it { expect(user).to validate_uniqueness_of(:email) }
   end
 
-  describe "ActiveRecord Attributes" do
+  describe 'Attributes' do
     it { expect(user).to respond_to(:first_name) }
     it { expect(user).to respond_to(:last_name) }
     it { expect(user).to respond_to(:zipcode) }
@@ -26,6 +26,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ActiveRecord Associations' do
+    it { expect(user).to have_many(:user_roles) }
+    it { expect(user).to have_many(:roles) }
   end
-
 end
