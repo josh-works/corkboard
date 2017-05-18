@@ -15,7 +15,7 @@ RSpec.describe Project, type: :model do
     it { expect(project).to validate_presence_of(:description) }
   end
 
-  describe 'ActiveRecord Attributes' do
+  describe 'Attributes' do
     it { expect(project).to respond_to(:status) }
     it { expect(project).to respond_to(:zipcode) }
     it { expect(project).to respond_to(:recurring) }
