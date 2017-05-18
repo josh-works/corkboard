@@ -16,6 +16,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'omniauth-facebook'
+gem 'figaro'
+
 
 group :test do
   gem 'capybara'
@@ -27,6 +30,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'awesome_print', require: 'ap'
   gem 'byebug', platform: :mri
   gem 'faker'
