@@ -28,5 +28,6 @@ RSpec.describe User, type: :model do
   describe 'ActiveRecord Associations' do
     it { expect(user).to have_many(:user_roles) }
     it { expect(user).to have_many(:roles) }
+    it { expect(user).to have_many(:requested_projects).with_foreign_key('requester_id') }
   end
 end
