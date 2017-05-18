@@ -1,8 +1,8 @@
 FactoryGirl.define do
   timelines = ['ASAP',
-               'within the week',
-               'this month',
-               'anytime']
+               'Sometime This Week',
+               'In 2 to 4 Weeks',
+               'No deadline']
 
   sequence :timeline, timelines.cycle do |n|
     "#{n}"
