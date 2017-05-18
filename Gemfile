@@ -29,6 +29,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'awesome_print', require: 'ap'
   gem 'byebug', platform: :mri
   gem 'faker'
