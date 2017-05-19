@@ -85,6 +85,8 @@ ActiveRecord::Schema.define(version: 20170518211928) do
     t.datetime "updated_at",   null: false
     t.string   "type"
     t.string   "uid"
+    t.string   "password"
+    t.string   "password_digest"
   end
 
   add_foreign_key "categories", "industries"
