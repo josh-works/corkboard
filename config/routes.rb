@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'home#index'
 
   get '/auth/facebook', as: 'facebook_login'

@@ -13,3 +13,155 @@
  *= require_tree .
  *= require_self
  */
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Custom CSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+html {
+ height: 100%;
+ box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+ box-sizing: inherit;
+}
+
+body {
+ position: relative;
+ margin: 0;
+ padding-bottom: 6rem;
+ min-height: 100%;
+ font-family: "Helvetica Neue", Arial, sans-serif;
+ font-family: 'Muli', sans-serif;
+}
+
+.site-content {
+ padding-bottom: 50px;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Navbar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.navbar {
+  height: 80px;
+  background-color: #FFFFFF;
+}
+
+.navbar-content {
+  padding-top: 13px;
+}
+
+.navbar-form {
+  overflow: auto;
+  margin-top: 0px;
+}
+
+.navbar-form .form-control {
+  display: inline-block;
+  width: 500px;
+  vertical-align: middle;
+  height: 50px;
+}
+
+.navbar-form .form-group {
+  display: inline;
+}
+
+.navbar-brand {
+  padding-top: 7px;
+  padding-left: 5px;
+}
+
+.navbar-form .btn {
+  margin-top: 2px;
+  margin-left: -10px;
+  height: 50px;
+  background-color: #F4F4F4;
+}
+
+.glyphicon-search {
+  height: 36px;
+  padding-top: 10px;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.navbar-fixed-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+  height: 15px;
+  background-color: #FAFAFA;
+ }
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Jumbotron
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.jumbotron {
+  margin-top: -20px;
+  margin-bottom: 0;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  background-image: url("jumbotron_1.jpg");
+  background-position: 0px -90px;
+  background-color: rgba(78,77,77,.35);
+  background-blend-mode: multiply;
+  color: white;
+}
+
+.jumbotron h1 {
+  font-size: 50px;
+}
+
+.jumbotron h3 {
+  font-size: 23px;
+}
+
+.jumbotron .form-group {
+  margin-top: 30px;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Icon List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.icons > .row > a > .col-md-1 > .glyphicon:hover {
+  color: #F27802;
+}
+
+.icons .glyphicon {
+  font-size: 50px;
+  color: #BDC4C4;
+}
+
+.icons .row {
+  background-color: #F4F4F4;
+  padding: 50px;
+  margin: 0;
+}
