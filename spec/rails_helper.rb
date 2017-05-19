@@ -7,6 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 require 'webmock/rspec'
+require 'stub_omniauth.rb'
 require 'vcr'
 
 VCR.configure do |config|
