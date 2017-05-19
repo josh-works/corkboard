@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash["success"] = "Logged in as #{@user.full_name}."
-      redirect_to root_path
+      redirect_to profile_dashboard_path
     else
       flash.now[:failure] = @user.errors.full_messages
       render :new
