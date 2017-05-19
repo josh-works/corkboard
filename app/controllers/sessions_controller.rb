@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    oauth_info = request.env["omniauth.auth"]
-    user = oauth_info ? oauth_login(User.locate_by(oauth_info, true), oauth_info) : manual_login(User.locate_by(params[:session][:email]))
+    # oauth_info = request.env["omniauth.auth"]
+    user = oauth_info ? oauth_login(User.locate_by(oauth_info, true)) : manual_login(User.locate_by(params[:session][:email]))
   end
 
   private
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     request.env["omniauth.auth"]
   end
 
-  def oauth_login(user, oauth_info)
+  def oauth_login(user)
    if user && user.new_record?
      render :template => "oauth/new", locals: { omniauth_info: oauth_info, user: User.new, name: User.name_from_oauth(oauth_info) }
    else
