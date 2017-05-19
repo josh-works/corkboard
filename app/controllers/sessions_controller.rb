@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # oauth_info = request.env["omniauth.auth"]
     user = oauth_info ? oauth_login(User.locate_by(oauth_info, true)) : manual_login(User.locate_by(params[:session][:email]))
   end
 
