@@ -7,6 +7,7 @@ RSpec.describe User, type: :model do
   end
 
   let(:user) { build(:user) }
+  let(:pro_user) { build(:pro_user) }
 
   describe 'ActiveModel validations' do
     it { expect(user).to validate_presence_of(:first_name) }
@@ -23,10 +24,14 @@ RSpec.describe User, type: :model do
     it { expect(user).to respond_to(:zipcode) }
     it { expect(user).to respond_to(:phone_number) }
     it { expect(user).to respond_to(:email) }
+    it { expect(user).to respond_to(:type) }
   end
 
   describe 'ActiveRecord Associations' do
     it { expect(user).to have_many(:user_roles) }
     it { expect(user).to have_many(:roles) }
+    it { expect(user).to have_many(:requested_projects).with_foreign_key('requester_id') }
+    it { expect(pro_user).to have_one(:pro_setting) }
+    it { expect(pro_user).to have_one(:industry) }
   end
 end

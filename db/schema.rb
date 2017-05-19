@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170518222230) do
+=======
+ActiveRecord::Schema.define(version: 20170518211928) do
+>>>>>>> d7532a6969e1b661520733df251700091cf8dcec
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,14 +33,27 @@ ActiveRecord::Schema.define(version: 20170518222230) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pro_settings", force: :cascade do |t|
+    t.integer  "industry_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["industry_id"], name: "index_pro_settings_on_industry_id", using: :btree
+    t.index ["user_id"], name: "index_pro_settings_on_user_id", using: :btree
+  end
+
   create_table "projects", force: :cascade do |t|
-    t.integer  "status",      default: 0
+    t.integer  "status",       default: 0
     t.string   "zipcode"
-    t.boolean  "recurring",   default: false
+    t.boolean  "recurring",    default: false
     t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "timeline",    default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "timeline",     default: 0
+    t.integer  "requester_id"
+    t.integer  "service_id"
+    t.index ["requester_id"], name: "index_projects_on_requester_id", using: :btree
+    t.index ["service_id"], name: "index_projects_on_service_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -68,14 +85,17 @@ ActiveRecord::Schema.define(version: 20170518222230) do
     t.string   "zipcode"
     t.string   "phone_number"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "type"
     t.string   "uid"
     t.string   "password"
     t.string   "password_digest"
   end
 
   add_foreign_key "categories", "industries"
+  add_foreign_key "pro_settings", "industries"
+  add_foreign_key "pro_settings", "users"
   add_foreign_key "services", "categories"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
