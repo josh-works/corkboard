@@ -18,6 +18,7 @@ gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'bcrypt'
 
 
 group :test do

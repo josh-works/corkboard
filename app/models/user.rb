@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :zipcode, presence: true
   validates :email, presence: true, uniqueness: true
   validates :phone_number, presence: true
-
+  has_secure_password validations: false
   has_many :user_roles
   has_many :roles, through: :user_roles
   has_many :requested_projects, :class_name => 'Project', :foreign_key => 'requester_id' 
@@ -20,7 +20,12 @@ class User < ApplicationRecord
     { first: full_name[0], last: full_name[1] }
   end
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+ def self.locate_by(data, oauth=false)
+  oauth ? find_or_initialize_by(uid: data["uid"]) : find_by(email: data)
+ end
+
+ def full_name
+   "#{first_name} #{last_name}"
+ end
+  
 end
