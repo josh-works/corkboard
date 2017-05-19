@@ -39,6 +39,8 @@ RSpec.describe Project, type: :model do
   end
 
   describe 'ActiveRecord Associations' do
+    it { expect(project).to belong_to(:requester) }
+    it { expect(project).to belong_to(:service) }
   end
 
 end

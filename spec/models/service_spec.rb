@@ -18,6 +18,7 @@ RSpec.describe Service, type: :model do
 
   describe 'ActiveRecord Associations' do
     it { expect(service).to belong_to(:category) }
+    it { expect(service).to have_many(:projects) }
   end
 
 end
