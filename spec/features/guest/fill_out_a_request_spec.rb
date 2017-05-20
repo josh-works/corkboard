@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'guest fills out a project request' do
   let!(:industry) { create(:industry, name: "Home Improvement") }
   let!(:category) { create(:category, name: "Lawn Care", industry: industry) }
-  let!(:service)  { create(:service, name: "Mowing", category: category)}
+  let!(:service)  { create(:service, name: "Mowing", category: category) }
 
   scenario 'from the root path' do
     visit root_path
