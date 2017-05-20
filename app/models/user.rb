@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
   has_many :user_roles
   has_many :roles, through: :user_roles
-  has_many :requested_projects, :class_name => 'Project', :foreign_key => 'requester_id' 
+  has_many :requested_projects, :class_name => 'Project', :foreign_key => 'requester_id'
 
   def self.from_omniauth(auth_info)
     user = where(uid: auth_info[:uid]).first_or_initialize do |new_user|
@@ -27,5 +27,4 @@ class User < ApplicationRecord
  def full_name
    "#{first_name} #{last_name}"
  end
-  
 end
