@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+
+  get '/:industry_slug', to: 'industries#show', as: 'industry'
 end
