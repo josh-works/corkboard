@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/:industry_slug', to: 'industries#show', as: 'industry'
+  resources :industry, path: '', only: [:show]
+
+
+  
+  # get '/:industry_slug', to: 'industries#show', as: 'industry'
 end
