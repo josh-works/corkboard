@@ -9,10 +9,10 @@ RSpec.describe Service, type: :model do
 
   describe 'ActiveModel validations' do
     before do
-      Industry.skip_callback(:validation, :before, :generate_slug)
+      Service.skip_callback(:validation, :before, :generate_slug)
     end
     after do
-      Industry.set_callback(:validation, :before, :generate_slug)
+      Service.set_callback(:validation, :before, :generate_slug)
     end
 
     it { expect(service).to validate_presence_of(:name) }
