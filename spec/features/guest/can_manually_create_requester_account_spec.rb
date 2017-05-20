@@ -6,7 +6,7 @@ RSpec.describe "Guest Bcrypt Authentication Process" do
 
     click_on "Sign Up"
     expect(current_path).to eq('/choose-account')
-    click_on "Sign up to hire"
+    click_on "Sign Up To Hire"
 
     fill_in "user[first_name]", with: "Arnold"
     fill_in "user[last_name]", with: "Schwarzenegger"

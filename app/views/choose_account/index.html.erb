@@ -1,1 +1,25 @@
-<%= link_to "Sign up to hire", register_path, class: 'btn btn-primary' %>
+<div class="container">
+  <div class="row text-center sign-up-header">
+    <h1>Sign up on CorkBoard</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card sign-up pro">
+        <div class="card-block">
+          <h3 class="card-title">I want to grow my business</h3>
+          <p class="card-text">Respond to customer requests and get hired</p>
+          <a href="#" class="btn btn-primary">Join As a Pro</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card sign-up requester">
+        <div class="card-block">
+          <h3 class="card-title">I want to hire professionals</h3>
+          <p class="card-text">Get introduced to the right pros for your projects</p>
+          <%= link_to "Sign Up To Hire", register_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
