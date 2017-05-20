@@ -14,4 +14,15 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  namespace :hire do
+    resources :service, path: '', only: [:show]
+  end
+
+
+  resources :industry, path: '', only: [:show] do
+    resources :category, path: '', only: [:show]
+  end
+
+
 end
