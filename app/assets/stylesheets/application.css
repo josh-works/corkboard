@@ -37,7 +37,6 @@ body {
  margin: 0;
  padding-bottom: 6rem;
  min-height: 100%;
- font-family: "Helvetica Neue", Arial, sans-serif;
  font-family: 'Muli', sans-serif;
 }
 
@@ -164,4 +163,58 @@ body {
   background-color: #F4F4F4;
   padding: 50px;
   margin: 0;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Sign Up Cards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.sign-up-header {
+  margin: 30px;
+  margin-bottom: 50px;
+}
+
+.sign-up {
+  border: 1px solid #E1E3E3;
+  border-radius: 4px;
+  padding: 36px;
+  width: 400px;
+  margin-left: 75px;
+}
+
+.pro {
+  background-image: url("sign_up_pro.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -120px 0;
+  color: #FFFFFF;
+}
+
+.sign-up .card-title {
+  margin-top: 0px;
+}
+
+.sign-up .btn-primary {
+  margin-top: 30px;
+  width: 100%;
+  background: #3F93F3;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Create Account Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.form-signin {
+  max-width: 400px;
+  padding: 40px;
+  margin: 0 auto;
+  border: 1px solid #E1E3E3;
+  border-radius: 4px;
+  margin-top: 40px;
 }
