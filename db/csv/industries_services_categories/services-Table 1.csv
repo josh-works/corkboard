@@ -1,0 +1,341 @@
+name,category_name
+Charter Bus Rental,Driver
+Limousine,Driver
+Party Bus,Driver
+Personal Driver,Driver
+Bartending,Event Staff
+Bouncer Services,Event Staff
+Event Help & Wait Staff,Event Staff
+Sommelier Services,Event Staff
+Candy Buffet,Food
+Chocolate Fountain Rental,Food
+Event Catering,Food
+Food Truck,Food
+Pastry Chef & Cake Making,Food
+Personal Chef,Food
+Wine & Beer Services,Food
+Live Band,Music
+DJ,Music
+Singer,Music
+Magician,Party
+Face Painting,Party
+Comedian,Party
+Dancers,Party
+Clowns!,Party
+Mobile Petting Zoo,Party
+Anniversary Party Planning,Planning
+Corporate Party Planning,Planning
+Engagement Party Planning,Planning
+Event Decorating,Planning
+Even Venues,Planning
+Invitations,Planning
+Party Planning,Planning
+Tour Guiding,Planning
+Bridal Stylist,Wedding
+Wedding Cakes,Wedding
+Wedding Catering,Wedding
+Wedding Decoratng,Wedding
+Wedding Officiant,Wedding
+Wedding Venues,Wedding
+Wedding Planning,Wedding
+Basement Finishing or Remodeling,Additions & Remodels
+Construction Services,Additions & Remodels
+Deck Sealing,Additions & Remodels
+Deck Staining,Additions & Remodels
+Deck Construction,Additions & Remodels
+Deck Repair,Additions & Remodels
+Demolition Services,Additions & Remodels
+Energy Efficiency Services,Additions & Remodels
+Foundation Installation,Additions & Remodels
+Foundation Repair,Additions & Remodels
+Home Remodeling,Additions & Remodels
+Kitchen Remodeling,Additions & Remodels
+New Home Construction,Additions & Remodels
+Outdoor Kitchen,Additions & Remodels
+Patios,Additions & Remodels
+Patio Repair,Additions & Remodels
+Stair and Staircase Repair,Additions & Remodels
+Sunroom Additions,Additions & Remodels
+Yurt Construction,Additions & Remodels
+Greenhouse Construction,Additions & Remodels
+Garage Construction,Additions & Remodels
+Garage Doors,Additions & Remodels
+Cabinet Installation,Carpentry
+Cabinet Refacing,Carpentry
+Cabinet Refinishing,Carpentry
+Cabinet Repair,Carpentry
+Custom Cabinets,Carpentry
+Framing,Carpentry
+General Carpentry,Carpentry
+Trim & Molding,Carpentry
+Finish Carpentry,Carpentry
+Asbestos Remediation,Cleaning
+Carpet Cleaning,Cleaning
+Chimney Cleaning,Cleaning
+Curtain Cleaning,Cleaning
+Dumpster Rental,Cleaning
+Fire Damage Restoration,Cleaning
+Floor Cleaning,Cleaning
+Floor Polishing,Cleaning
+Garage & Basement & Attic Cleaning,Cleaning
+Gutter Cleaning,Cleaning
+House Cleaning,Cleaning
+Junk Removal,Cleaning
+Mattress Cleaning,Cleaning
+Odor Removal,Cleaning
+Pressure Washing,Cleaning
+Property Cleanup,Cleaning
+Roof Cleaning,Cleaning
+Tile & Grout Cleaning,Cleaning
+Upholstery Cleaning,Cleaning
+Water Damage Remediation,Cleaning
+Window Cleaning,Cleaning
+Asphalt Installation,Concrete/Cement/Asphalt
+Asphalt Repair,Concrete/Cement/Asphalt
+Brick or Stone Repair,Concrete/Cement/Asphalt
+Concrete Installation,Concrete/Cement/Asphalt
+Concrete Removal,Concrete/Cement/Asphalt
+Concrete Repair,Concrete/Cement/Asphalt
+Masonry,Concrete/Cement/Asphalt
+Stucco,Concrete/Cement/Asphalt
+Driveway Sealing,Concrete/Cement/Asphalt
+Curtain Installation,Design & Decor
+Curtain Repair,Design & Decor
+Home Staging,Design & Decor
+Interior Design,Design & Decor
+Muralist,Design & Decor
+Picture Framing,Design & Decor
+Picture Hanging,Design & Decor
+Wallpaper Installation,Design & Decor
+Wallpaper Removal,Design & Decor
+Circuit Breaker Panel Installation,Electrical
+Electrical and Wiring Issues,Electrical
+Fan Installation,Electrical
+General Installation,Electrical
+Generator Installation,Electrical
+Generator Repair,Electrical
+Geothermal Energy Services,Electrical
+Solar Panel Installation,Electrical
+Solar Panel Repair,Electrical
+Switch and Outlet Installation,Electrical
+Switch and Outlet Repair,Electrical
+Wiring,Electrical
+Carpet Installation,Flooring
+Carpet Removal,Flooring
+Carpet Repair,Flooring
+Epoxy Floor Coating,Flooring
+Floor Installation,Flooring
+Floor Repair,Flooring
+Hardwood Floor Installation,Flooring
+Hardwoord Floor Refinishing,Flooring
+Antique Restoration,Furniture
+Furniture Assembly,Furniture
+Closets and Shelving,Furniture
+Countertop Installation,Furniture
+Furniture Delivery,Furniture
+Furniture Repair,Furniture
+Furniture Refinishing,Furniture
+Furniture Upholstery,Furniture
+Caulking,General Contractor
+General Contracting,General Contractor
+Handyman,General Contractor
+Holiday Lighting,General Contractor
+Odd Jobs,General Contractor
+Boiler Inspection or Maintenance,Heating & Cooling
+Boiler Installation,Heating & Cooling
+Boiler Repair,Heating & Cooling
+Central Air Conditioning Installation,Heating & Cooling
+Central Air Conditioning Maintenance,Heating & Cooling
+Duct & Vent Cleaning,Heating & Cooling
+Duct & Vent Installation,Heating & Cooling
+Duct and Vent Maintenance,Heating & Cooling
+Fireplace and Chimney Cleaning,Heating & Cooling
+Fireplace and Chimney Inspection,Heating & Cooling
+Fireplace and Chimney Installation,Heating & Cooling
+Furnace Installation,Heating & Cooling
+Furnace Repair,Heating & Cooling
+Furnace Maintenance,Heating & Cooling
+Heat Pump Maintenance,Heating & Cooling
+Heat Pump Repair,Heating & Cooling
+Heat Pump Installation,Heating & Cooling
+Thermostat Installation,Heating & Cooling
+Thermostat Repair,Heating & Cooling
+House Sitting,Home Services
+Property Management,Home Services
+Home Theater Construction,Home Entertainment
+Home Audio,Home Entertainment
+Home Automation,Home Entertainment
+TV Mounting,Home Entertainment
+Air Quality Inspection,Inspections
+Asbestos Inspection,Inspections
+Chimney Inspection,Inspections
+Electrical Inspection,Inspections
+Fire Extinguisher Inspection,Inspections
+Home Energy Auditing,Inspections
+Home Inspection,Inspections
+Land Surveying,Inspections
+Mold Inspection,Inspections
+Pest Inspection,Inspections
+Plumbing Inspection,Inspections
+Real Estate Appraisal,Inspections
+Septic System Inspection,Inspections
+Swimming Pool Inspection,Inspections
+Aeration,Lawn & Garden
+Fertilizing,Lawn & Garden
+Gardening,Lawn & Garden
+Lawn Mowing & Trimming,Lawn & Garden
+Leaf Clean up,Lawn & Garden
+Mulching,Lawn & Garden
+Outdoor Pesticide Application,Lawn & Garden
+Seeding,Lawn & Garden
+Landscaping Installation,Lawn & Garden
+Tree Planting,Lawn & Garden
+Weeding,Lawn & Garden
+Tree Removal,Lawn & Garden
+Stump Grinding,Lawn & Garden
+Artificial Turf Installation,Lawn & Garden
+Hardscaping,Lawn & Garden
+Irrigation,Lawn & Garden
+Piano Moving,Moving
+Hot Tub Moving,Moving
+Long Distance Moving,Moving
+General Moving,Moving
+Emergency Plumbing,Plumbing
+Gas Line Installation,Plumbing
+Drain Repair,Plumbing
+Pipe Repair,Plumbing
+Septic Installation,Plumbing
+Septic Servicing,Plumbing
+Shower and Bathtub Installation,Plumbing
+Shower and Bathtub Repair,Plumbing
+Toilet Repair,Plumbing
+Water Heater Installation,Plumbing
+ACT,Academic Tutoring
+Algebra,Academic Tutoring
+Math,Academic Tutoring
+Biology,Academic Tutoring
+Calculus,Academic Tutoring
+Chemistry,Academic Tutoring
+College Admissions,Academic Tutoring
+Economics,Academic Tutoring
+GED,Academic Tutoring
+GRE,Academic Tutoring
+Geometry,Academic Tutoring
+History,Academic Tutoring
+LSAT,Academic Tutoring
+MCAT,Academic Tutoring
+Physics,Academic Tutoring
+SAT,Academic Tutoring
+Science,Academic Tutoring
+Teacher Training,Academic Tutoring
+Private Cooking Lessons,Cooking
+Ballroom Dance Lessons,Dancing
+Belly Dance Lessons,Dancing
+Hip Hop Dance Lessons,Dancing
+Private Dance Lessons,Dancing
+Tango Dance Lessons,Dancing
+Swing Dance Lessons,Dancing
+Tap Dance Lessons,Dancing
+Arabic Lessons,Language
+ESL Lessons,Language
+French Lessons,Language
+German Lessons,Language
+Hebrew Lessons,Language
+Italian Lessons,Language
+Japanese Lessons,Language
+Korean Lessons,Language
+Mandarin Lessons,Language
+Portuguese Lessons,Language
+Sign Language Lessons,Language
+Spanish Lessons,Language
+Bagpipe Lessons,Music
+Kazoo Lessons,Music
+Banjo Lessons,Music
+Bass Guitar Lessons,Music
+Cello Lessons,Music
+Clarinet Lessons,Music
+Drum Lessons,Music
+Fiddle Lessons,Music
+Flute Lessons,Music
+French Horn Lessons,Music
+Mandolin Lessons,Music
+Music Theory,Music
+Oboe Lessons,Music
+Sight-Reading,Music
+Trumbone Lessons,Music
+Guitar Lessons,Music
+Viola Lessons,Music
+Vocal Lessons,Music
+Career Coaching,Coaching
+Creativity Coaching,Coaching
+Health and Wellness Coaching,Coaching
+Life Coaching,Coaching
+Stress Management,Coaching
+Organizational Coaching,Coaching
+General Counseling,Counseling
+Family Counseling,Counseling
+Grief Counseling,Counseling
+Hypnotherapy,Counseling
+Marriage and Relationship Counseling,Counseling
+Meditation,Counseling
+Mental Health Counseling,Counseling
+Psychology,Counseling
+Social Anxiety Counseling,Counseling
+Therapy,Counseling
+Yoga,Exercise
+Personal Training,Exercise
+Pilates,Exercise
+Tai Chi,Exercise
+Nutritionist,Healthy & Beauty
+Acupuncture,Healthy & Beauty
+Massage,Healthy & Beauty
+Physical Therapy,Healthy & Beauty
+Manicure,Healthy & Beauty
+Pedicure,Healthy & Beauty
+Styling,Healthy & Beauty
+Hair,Healthy & Beauty
+Accounting,Business
+Administrative Support,Business
+Advertising,Business
+Businesses Consulting,Business
+Data Destruction,Business
+Data Entry,Business
+Digital Marketing,Business
+Direct Mail Marketing,Business
+Email Management,Business
+Financial Services & Planning,Business
+Franchise Consulting,Business
+HR & Payroll,Business
+Marketing,Business
+Public Relations,Business
+Recruiting,Business
+Search Engine Optimization,Business
+Social Media Marketing,Business
+Tax Preparation,Business
+CNC Machine Service,Crafts
+Crocheting,Crafts
+Custom Airbrushing,Crafts
+Custom Jewelry,Crafts
+Electroplating,Crafts
+Embroidery,Crafts
+Engraving,Crafts
+Fine Art Consultation,Crafts
+Illustrating,Crafts
+Powder Coating,Crafts
+CAD Services,Design & Web
+Animation,Design & Web
+E Commerce,Design & Web
+Engineering and Technical Design,Design & Web
+Graphic Design,Design & Web
+Mobile Software Development,Design & Web
+Presentation Design,Design & Web
+Software Development,Design & Web
+Technical Design,Design & Web
+UI Design,Design & Web
+Web Design & Development,Design & Web
+Dog Training,Pets
+Dog Walking,Pets
+Pet Care,Pets
+Pet Sitting,Pets
+Wildlife Removal,Pets
+Pet Grooming,Pets

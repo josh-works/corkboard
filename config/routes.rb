@@ -19,10 +19,8 @@ Rails.application.routes.draw do
     resources :service, path: '', only: [:show]
   end
 
-
   resources :industry, path: '', only: [:show] do
     resources :category, path: '', only: [:show]
   end
-
 
 end
