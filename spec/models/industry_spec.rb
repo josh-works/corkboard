@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Industry, type: :model do
-
   it 'has a valid factory' do
     expect(build(:industry)).to be_valid
   end
@@ -24,7 +23,6 @@ RSpec.describe Industry, type: :model do
 
   describe 'Attributes' do
     it { expect(industry).to respond_to(:name) }
-    it { expect(industry).to respond_to(:glyphicon) }
     it { expect(industry).to respond_to(:slug) }
   end
 
@@ -33,14 +31,14 @@ RSpec.describe Industry, type: :model do
     it { expect(industry).to have_many(:services) }
   end
 
-  describe 'callbacks' do
+  describe 'Callbacks' do
     let(:industry) { create(:industry) }
 
     it { expect(industry).to callback(:generate_slug).before(:validation) }
   end
 
-  describe 'instance methods' do
-    context 'it responds to its methods' do
+  describe 'Instance methods' do
+    context 'responds to its methods' do
       it { expect(industry).to respond_to(:generate_slug) }
       it { expect(industry).to respond_to(:to_param) }
     end
@@ -60,7 +58,7 @@ RSpec.describe Industry, type: :model do
     end
   end
 
-  describe 'class methods', Industry do
+  describe 'Class methods', Industry do
     let(:industry) { create(:industry) }
 
     context 'it responds to its methods' do

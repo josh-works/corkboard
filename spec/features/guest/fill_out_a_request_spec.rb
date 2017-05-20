@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'guest fills out a project request' do
   let!(:industry) { create(:industry, name: "Home Improvement") }
   let!(:category) { create(:category, name: "Lawn Care", industry: industry) }
+  let!(:service)  { create(:service, name: "Mowing", category: category)}
 
   scenario 'from the root path' do
     visit root_path
@@ -10,10 +11,10 @@ RSpec.feature 'guest fills out a project request' do
     click_link('home-link')
     expect(current_path).to eq('/home-improvement')
 
-    click_link('lawn-care-link')
-    expect(current_path).to eq('home-improvement/lawn-care')
+    click_link("#{category.slug}")
+    expect(current_path).to eq('/home-improvement/lawn-care')
 
-    click_on('mowing-link')
+    click_on("#{service.slug}")
     expect(current_path).to eq('hire/mowing')
 
     expect(page).to have_css('.project-form')
