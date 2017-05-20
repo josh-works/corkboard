@@ -19,5 +19,9 @@
 # Ignore application configuration
 /config/application.yml
 
+
+#ignore VCR gem cassettes
+/spec/cassettes
+
 # Ignore DS Store files
 *.DS_Store
