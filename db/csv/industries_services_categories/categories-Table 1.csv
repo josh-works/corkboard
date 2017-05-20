@@ -1,0 +1,37 @@
+name,industry_name
+Driver,Events
+Event Staff,Events
+Food,Events
+Music,Events
+Party,Events
+Planning,Events
+Wedding,Events
+Additions & Remodels,Home
+Carpentry,Home
+Cleaning,Home
+Concrete/Cement/Asphalt,Home
+Design & Decor,Home
+Electrical,Home
+Flooring,Home
+Furniture,Home
+General Contractor,Home
+Heating & Cooling,Home
+Home Services,Home
+Home Entertainment,Home
+Inspections,Home
+Lawn & Garden,Home
+Moving,Home
+Plumbing,Home
+Academic Tutoring,Lessons
+Cooking,Lessons
+Dancing,Lessons
+Language,Lessons
+Music Lessons,Lessons
+Coaching,Wellness
+Counseling,Wellness
+Exercise,Wellness
+Healthy & Beauty,Wellness
+Business,More
+Crafts,More
+Design & Web,More
+Pets,More
