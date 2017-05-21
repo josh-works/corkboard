@@ -1,0 +1,5 @@
+<div class="industry-choices">
+  <% @industries.each do |industry| %>
+    <%= link_to industry.name, industry_path(industry.id) %>
+  <% end %>
+</div>
