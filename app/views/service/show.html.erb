@@ -21,14 +21,14 @@
     <%= f.label "How soon do you need this done?" %></br>
     <%= f.radio_button :timeline, "ASAP", :checked => true %>
     <%= f.label :timeline, "ASAP", :value => "ASAP" %></br>
-    <%= f.radio_button :timeline, 1 %>
+    <%= f.radio_button :timeline, "Within 2 Weeks" %>
     <%= f.label :timeline, "Within 2 Weeks", :value => "Within 2 Weeks" %></br>
-    <%= f.radio_button :timeline, 2 %>
+    <%= f.radio_button :timeline, "Within 2 Months" %>
     <%= f.label :timeline, "Within 2 Months", :value => "Within 2 Months" %></br> 
-    <%= f.radio_button :timeline, 3 %>
+    <%= f.radio_button :timeline, "Whenever" %>
     <%= f.label :timeline, "Whenever", :value => "Whenever" %></br>
   </div>
 
-  <p>Login or Sign Up to request this project</p>
+  <p><%=link_to "Login", login_path %> or <%= link_to "Sign Up", choose_account_path %> to request this project</p>
 <% end %>
 
