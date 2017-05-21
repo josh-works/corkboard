@@ -1,25 +1,28 @@
 class ProRegisterController < ApplicationController
 
   def new
-    @user = User.new
+    @service = Service.find(params[:service])
+    @pro = Pro.new
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      flash["success"] = "Logged in as #{@user.full_name}."
+    @pro = Pro.new(pro_params)
+    @pro.pro_setting.create!(service: Service.find_by(name: params[:service]))
+    if @pro.save
+      session[:pro_id] = @pro.id
+      flash["success"] = "Logged in as #{@pro.full_name}."
+binding.pry
       redirect_to profile_dashboard_path
     else
-      flash.now[:failure] = @user.errors.full_messages
+      flash.now[:failure] = @pro.errors.full_messages
       render :new
     end
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:first_name,
+  def pro_params
+    params.require(:pro).permit(:first_name,
                                  :last_name,
                                  :zipcode,
                                  :phone_number,

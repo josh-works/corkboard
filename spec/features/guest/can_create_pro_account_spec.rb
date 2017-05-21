@@ -34,7 +34,7 @@ RSpec.describe "Guest can create Pro Process" do
 
     click_on 'Lawn & Garden'
 
-    expect(current_path).to eq('/pro-register/home-improvement/lawn-garden')
+    expect(current_path).to eq('/pro_register/home-improvement/lawn-garden')
 
     within ".service-choices" do
       expect(page).to have_content("Lawn Mowing & Trimming")
@@ -42,15 +42,15 @@ RSpec.describe "Guest can create Pro Process" do
 
     click_on "Lawn Mowing & Trimming"
 
-    expect(current_path).to eq '/pro-register/info'
+    expect(current_path).to eq '/pro_register/signup'
 
-    fill_in "user[first_name]", with: "Arnold"
-    fill_in "user[last_name]", with: "Schwarzenegger"
-    fill_in "user[phone_number]", with: "8675309"
-    fill_in "user[zipcode]", with: "79720"
-    fill_in "user[email]", with: "arny22@gmail.com"
-    fill_in "user[password]", with: "hunter2"
-    fill_in "user[password_confirmation]", with: "hunter2"
+    fill_in "pro[first_name]", with: "Arnold"
+    fill_in "pro[last_name]", with: "Schwarzenegger"
+    fill_in "pro[phone_number]", with: "8675309"
+    fill_in "pro[zipcode]", with: "79720"
+    fill_in "pro[email]", with: "arny22@gmail.com"
+    fill_in "pro[password]", with: "hunter2"
+    fill_in "pro[password_confirmation]", with: "hunter2"
 
     click_on "Create Account"
 
