@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="color: transparent;">
   <div class="container-fluid navbar-content">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -15,9 +15,9 @@
       </a>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="What service do you need?">
+          <%= navbar_service_search %>
         </div>
-        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+          <%= navbar_search_button %>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><%= sign_up_button %></li>

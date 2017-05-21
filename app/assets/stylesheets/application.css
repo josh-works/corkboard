@@ -53,7 +53,7 @@ body {
 
 .navbar {
   height: 80px;
-  background-color: #FFFFFF;
+  background: transparent;
 }
 
 .navbar-content {

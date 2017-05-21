@@ -12,4 +12,16 @@ module ApplicationHelper
       link_to 'Sign Up', choose_account_path
     end
   end
+
+  def navbar_service_search
+    if logged_in?
+      "<input type='text' class='form-control' placeholder='What service do you need?'>".html_safe
+    end
+  end
+
+  def navbar_search_button
+    if logged_in?
+      "<button type='submit' class='btn btn-default'><i class='glyphicon glyphicon-search'></i></button>".html_safe
+    end
+  end
 end
