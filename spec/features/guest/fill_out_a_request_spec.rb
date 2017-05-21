@@ -23,6 +23,8 @@ RSpec.feature 'guest fills out a project request' do
     choose('Recurring')
     fill_in('project[description]', :with => 'This is a project that I need done right away')
     choose('ASAP')
+
     expect(page).to have_content('Login or Sign Up to request this project')
+    expect(page).to_not have_content('Create Project')
   end
 end
