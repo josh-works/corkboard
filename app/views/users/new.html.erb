@@ -5,17 +5,25 @@
     </div>
   </div>
   <div class="form-signin">
-    <%= form_for(@user, url: register_path, method: :post) do |f| %>
-    <%= f.text_field :first_name, placeholder: "First Name", id: "first_name"%>
-    <%= f.text_field :last_name, placeholder: "Last Name", id: "last_name"%>
-    <%= f.text_field :zipcode, placeholder: 'Enter Zip Code', id: "zip_code"%>
-    <%= f.text_field :phone_number, placeholder: 'Enter Phone Number', id: "phone_number"%>
-    <%= f.text_field :email, placeholder: "Email", id: "email"%>
-    <%= f.password_field :password, placeholder: "Password" %>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    <%= bootstrap_form_for(@user, url: register_path, method: :post) do |f| %>
+    <%= f.text_field :first_name, placeholder: "First Name", id: "first_name"%><br>
+    <%= f.text_field :last_name, placeholder: "Last Name", id: "last_name"%><br>
+    <%= f.text_field :zipcode, placeholder: 'Enter Zip Code', id: "zip_code"%><br>
+    <%= f.text_field :phone_number, placeholder: 'Enter Phone Number', id: "phone_number"%><br>
+    <%= f.text_field :email, placeholder: "Email", id: "email"%><br>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", label: "Confirm Password" %><br>
     <%= f.submit "Create Account", class: "btn login btn-primary" %>
     <%end%>
-
-    <%= link_to "Sign Up With Facebook", facebook_login_path %>
+  </div>
+  <div class="row text-center or">
+    <p>or</p>
+  </div>
+  <div class="row text-center">
+    <div class="facebook-login">
+      <%= button_to facebook_login_path, :method => "get", class: "facebook-button" do %>
+        <i class="fa fa-facebook"></i> | Sign up with Facebook
+      <% end %>
+    </div>
   </div>
 </div>

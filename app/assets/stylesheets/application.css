@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  */
 
 
@@ -206,7 +207,7 @@ body {
 
 /**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Create Account Card
+* Create Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
@@ -217,4 +218,29 @@ body {
   border: 1px solid #E1E3E3;
   border-radius: 4px;
   margin-top: 40px;
+}
+
+.form-signin .btn {
+  width: 100%;
+  background: #3F93F3;
+  height: 60px;
+  font-size: 20px;
+}
+
+.or {
+  margin-top: 25px;
+  font-size: 20px;
+  color: gray;
+}
+
+.facebook-login {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.facebook-button {
+  height: 60px;
+  width: 318px;
+  color: #FFFFFF;
+  background-color: #4C66A4;
 }
