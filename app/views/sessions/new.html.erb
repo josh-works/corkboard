@@ -1,5 +1,15 @@
-<%= form_for(:session, url: login_path, method: :post) do |f| %>
-  <%= f.text_field :email, placeholder: "Email", id: "email"%>
-  <%= f.password_field :password, placeholder: "Password" %>
-  <%= f.submit "Login", class: "btn login btn-primary" %>
-<%end%>
+<h1 class="Login-title H3-R">Welcome back</h1>
+
+<div class="Login-formContainer">
+  <%= form_for(:session, url: login_path, method: :post) do |f| %>
+    <%= f.label "Email address" %> <br>
+    <%= f.text_field :email, id: 'email' %> <br>
+    <%= f.label "Password" %> <br>
+    <%= f.password_field :password %> <br> <br>
+    <%= f.submit "Login", class: "btn login btn-primary" %> or
+      <span>
+        <%= f.submit "Log in with Facebook", class: "btn login btn-primary"%> <br>
+      </span>
+    We'll never post without permission.
+  <% end %>
+</div>
