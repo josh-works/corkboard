@@ -16,6 +16,10 @@ class User < ApplicationRecord
     end
   end
 
+  def is_valid_code?(code)
+    verification_code == code
+  end
+
   def self.name_from_oauth(oauth_info)
     full_name = oauth_info["info"]["name"].split(' ')
     { first: full_name[0], last: full_name[1] }
