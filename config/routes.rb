@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro_register/signup', to: 'pro_register#new'
   get '/pro/dashboard', to: 'pro#show'
-  get '/new-project-confirmation/:id', to: 'project#confirmation', as: 'new_project_confirmation'
+  get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
   namespace :pro_register do
     resources :industry, path: '', only: [:index] do
@@ -27,15 +27,21 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :hire do
-  #   resources :service, path: '', only: [:show]
-  # end
+  # resources :project, only: [:create]
 
-  resources :service, path: 'hire', only: [:show]
-  resources :project, only: [:create]
-
-  resources :industry, path: '', only: [:show] do
-    resources :category, path: '', only: [:show]
+  namespace :hire do
+    resources :project, path: ':service', only: [:new, :create]
   end
+
+  namespace :hire do
+    resources :industry, path: '', only: [:show] do
+      resources :category, path: '', only: [:show]
+    end
+  end
+
+  # resources :service, path: 'hire', only: [:show]
+  # resources :industry, path: '', only: [:show] do
+  #   resources :category, path: '', only: [:show]
+  # end
 
 end

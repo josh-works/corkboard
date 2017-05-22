@@ -1,4 +1,4 @@
-class IndustryController < ApplicationController
+class Hire::IndustryController < ApplicationController
 
   def show
     @industry = Industry.find(params[:id])

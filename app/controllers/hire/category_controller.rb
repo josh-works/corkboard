@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class Hire::CategoryController < ApplicationController
 
   def show
     @category = Category.find(params[:id])

@@ -1,4 +1,8 @@
-class ProjectController < ApplicationController
+class Hire::ProjectController < ApplicationController
+  def new
+    @service = Service.find(params[:service])
+    @project = Project.new
+  end
 
   def create
     project = Project.create(zipcode:     params[:project][:zipcode],
@@ -14,4 +18,5 @@ class ProjectController < ApplicationController
   def confirmation
     @project = Project.find(params[:id])
   end
+  
 end
