@@ -54,7 +54,7 @@ body {
 
 .navbar {
   height: 80px;
-  background-color: #FFFFFF;
+  background: transparent;
 }
 
 .navbar-content {
@@ -151,19 +151,27 @@ body {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-.icons > .row > a > .col-md-1 > .glyphicon:hover {
-  color: #F27802;
-}
-
-.icons .glyphicon {
+.icons .fa {
   font-size: 50px;
   color: #BDC4C4;
 }
 
-.icons .row {
+.icons-container {
+  padding: 20px;
   background-color: #F4F4F4;
-  padding: 50px;
-  margin: 0;
+}
+
+.icons-row {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icons-row .fa:hover {
+  color: #F27802;
 }
 
 

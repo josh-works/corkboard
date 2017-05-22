@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'bootstrap_form'
 gem 'coffee-rails', '~> 4.2'
 gem 'font-awesome-sass'
