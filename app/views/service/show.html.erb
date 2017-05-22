@@ -14,11 +14,6 @@
     <%= f.label :recurring, "Recurring", :value => true %></br>
   </div>
 
-  <div class="form-group" id="description-form">
-    <%= f.label "Tell us about your project" %></br>
-    <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project", cols: 40, rows: 7 %></br>
-  </div>
-
   <div class="form-group" id="timeline-form">
     <%= f.label "How soon do you need this done?" %></br>
     <%= f.radio_button :timeline, "ASAP", :checked => true %>
@@ -29,6 +24,11 @@
     <%= f.label :timeline, "Within 2 Months", :value => "Within 2 Months" %></br>
     <%= f.radio_button :timeline, "Whenever" %>
     <%= f.label :timeline, "Whenever", :value => "Whenever" %></br>
+  </div>
+
+  <div class="form-group" id="description-form">
+    <%= f.label "Tell us about your project" %></br>
+    <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project", cols: 40, rows: 7 %></br>
   </div>
 
   <% if logged_in? %>
