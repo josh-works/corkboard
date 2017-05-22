@@ -1,11 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "User Bcrypt Authentication Process" do
-
+RSpec.describe "User can login with form" do
 
 let!(:user) { create(:user) }
-
-
 
   it "user can login" do
 
