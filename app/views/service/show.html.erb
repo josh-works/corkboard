@@ -1,4 +1,6 @@
 <%= form_for @project, url: {controller: "project", action: "create"}, html: {class: "project-form"} do |f| %>
+  <%= f.hidden_field :service_id, :value => @service.id %>
+
   <div class="form-group" id="zipcode-form">
     <%= f.label "Project Zipcode" %></br>
     <%= f.text_field :zipcode %> </br>

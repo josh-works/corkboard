@@ -30,7 +30,10 @@ RSpec.describe 'user creates a project' do
     expect(page).to_not have_content('Login or Sign Up to request this project')
     click_on "Submit"
 
-    expect(current_path).to eq('/')
+    new_project = Project.last
+
+    expect(Project.count).to eq(1)
+    expect(current_path).to eq(new_project_confirmation_path(new_project))
   end
 end
 

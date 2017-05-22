@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro_register/signup', to: 'pro_register#new'
   get '/pro/dashboard', to: 'pro#show'
+  get '/new-project-confirmation/:id', to: 'project#confirmation', as: 'new_project_confirmation'
 
   namespace :pro_register do
     resources :industry, path: '', only: [:index] do
