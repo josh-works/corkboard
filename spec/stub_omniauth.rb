@@ -16,4 +16,5 @@ def stub_omniauth
                {"raw_info"=>
                  {"name"=>"Riley Thompson", "email"=>"rileyt_111@hotmail.com", "id"=>"1446022172087896"}}})
 
+
 end
