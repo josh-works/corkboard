@@ -19,10 +19,12 @@ RSpec.feature 'guest fills out a project request' do
 
     expect(page).to have_css('.project-form')
 
-    fill_in('zipcode', :with => '80210')
-    select('Yes', :from => 'recurring')
-    fill_in('description', :with => 'This is a project that I need done right away')
-    select('ASAP', :from => 'timeline')
+    fill_in('project[zipcode]', :with => '80210')
+    choose('Recurring')
+    fill_in('project[description]', :with => 'This is a project that I need done right away')
+    choose('ASAP')
+
     expect(page).to have_content('Login or Sign Up to request this project')
+    expect(page).to_not have_content('Create Project')
   end
 end

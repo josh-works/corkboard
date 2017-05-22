@@ -1,5 +1,5 @@
 <% @category.services.each do |service| %>
   <ul>
-    <li><%= link_to service.name, hire_service_path(service), id: "#{service.slug}" %></li>
+    <li><%= link_to service.name, service_path(service), id: "#{service.slug}" %></li>
   </ul>
 <% end %>
