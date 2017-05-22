@@ -20,7 +20,6 @@ FactoryGirl.define do
   end
 end
 
-
 FactoryGirl.define do
   factory :listing_with_features, :parent => :listing do |listing|
     features { build_list :feature, 3 }

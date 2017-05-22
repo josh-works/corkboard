@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap_form'
 gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'

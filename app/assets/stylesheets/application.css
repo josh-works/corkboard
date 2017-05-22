@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  */
 
 
@@ -209,12 +210,21 @@ body {
   margin-top: 30px;
   width: 100%;
   background: #3F93F3;
+  height: 50px;
+  padding-top: 13px;
+  font-size: 15px;
+}
+
+.sign-up .btn-primary:hover {
+  background: #3275C2;
+  color: #65A8F5;
+  transition: all 0.3s ease 0s;
 }
 
 
 /**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Create Account Card
+* Create Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
@@ -227,30 +237,50 @@ body {
   margin-top: 40px;
 }
 
-/** Login Page **/
-/**  **/
-.Login-title {
-    text-align: center;
-    margin-bottom: 16px;
+.form-signin .btn {
+  width: 100%;
+  background: #3F93F3;
+  height: 60px;
+  font-size: 20px;
 }
-.H3-R {
-    font-size: 32px;
-    line-height: 40px;
-    color: #4e4d4d;
+
+.form-signin .btn:hover {
+  background: #3275C2;
+  color: #65A8F5;
+  transition: all 0.3s ease 0s;
 }
-.Login {
-  background: #fafafa;
-  padding-top: 32px;
-  padding-bottom: 52px;
-  min-height: calc(100vh - 80px - 20px);
+
+.or {
+  margin-top: 25px;
+  font-size: 20px;
+  color: gray;
 }
-.Login-formContainer {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 0 auto;
-    border: 1px solid #edeeee;
-    border-radius: 8px;
-    padding-bottom: 24px;
-        padding: 20px;
-        text-align: center;
+
+.facebook-login {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.facebook-button {
+  height: 60px;
+  width: 318px;
+  color: #FFFFFF;
+  background-color: #4C66A4;
+}
+
+.facebook-button:hover {
+  color: lightgray;
+  background-color: #3C5183;
+  transition: all 0.3s ease 0s;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Create Account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.login-session {
+  background-color: #FAFAFA;
 }
