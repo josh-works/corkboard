@@ -13,10 +13,10 @@
     <%= f.radio_button :recurring, true %>
     <%= f.label :recurring, "Recurring", :value => true %></br>
   </div>
-  
+
   <div class="form-group" id="description-form">
     <%= f.label "Tell us about your project" %></br>
-    <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project" %></br>
+    <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project", cols: 40, rows: 7 %></br>
   </div>
 
   <div class="form-group" id="timeline-form">
@@ -26,7 +26,7 @@
     <%= f.radio_button :timeline, "Within 2 Weeks" %>
     <%= f.label :timeline, "Within 2 Weeks", :value => "Within 2 Weeks" %></br>
     <%= f.radio_button :timeline, "Within 2 Months" %>
-    <%= f.label :timeline, "Within 2 Months", :value => "Within 2 Months" %></br> 
+    <%= f.label :timeline, "Within 2 Months", :value => "Within 2 Months" %></br>
     <%= f.radio_button :timeline, "Whenever" %>
     <%= f.label :timeline, "Whenever", :value => "Whenever" %></br>
   </div>
@@ -37,4 +37,3 @@
     <p><%=link_to "Login", login_path %> or <%= link_to "Sign Up", choose_account_path %> to request this project</p>
   <% end %>
 <% end %>
-
