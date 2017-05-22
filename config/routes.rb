@@ -13,7 +13,18 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  post '/pro_register', to: 'pro_register#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/pro_register/signup', to: 'pro_register#new'
+  get '/pro/dashboard', to: 'pro#show'
+
+  namespace :pro_register do
+    resources :industry, path: '', only: [:index] do
+      resources :category, path: '', only: [:index] do
+        resources :service, path: '', only: [:index]
+      end
+    end
+  end
 
   # namespace :hire do
   #   resources :service, path: '', only: [:show]
