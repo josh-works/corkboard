@@ -74,7 +74,6 @@ RSpec.describe Category, type: :model do
         it 'can find by slug' do
           expect(Category.find(category.slug)).to eq(category)
         end
-
       end
     end
   end
