@@ -1,11 +1,14 @@
 require 'rails_helper'
 
-RSpec.feature 'guest fills out a project request' do
+RSpec.describe 'user creates a project' do
   let!(:industry) { create(:industry, name: "Home Improvement") }
   let!(:category) { create(:category, name: "Lawn Care", industry: industry) }
   let!(:service)  { create(:service, name: "Mowing", category: category) }
+  let!(:user)     { create(:user) }
 
-  scenario 'from the root path' do
+  scenario 'with valid inputs' do
+    page.set_rack_session({user_id: user.id})
+
     visit root_path
 
     click_link('home-link')
@@ -24,7 +27,10 @@ RSpec.feature 'guest fills out a project request' do
     fill_in('project[description]', :with => 'This is a project that I need done right away')
     choose('ASAP')
 
-    expect(page).to have_content('Login or Sign Up to request this project')
-    expect(page).to_not have_content('Submit')
+    expect(page).to_not have_content('Login or Sign Up to request this project')
+    click_on "Submit"
+
+    expect(current_path).to eq('/')
   end
 end
+
