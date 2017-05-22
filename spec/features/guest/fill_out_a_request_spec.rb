@@ -25,6 +25,6 @@ RSpec.feature 'guest fills out a project request' do
     choose('ASAP')
 
     expect(page).to have_content('Login or Sign Up to request this project')
-    expect(page).to_not have_content('Create Project')
+    expect(page).to_not have_content('Submit')
   end
 end
