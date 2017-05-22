@@ -202,6 +202,15 @@ body {
   margin-top: 30px;
   width: 100%;
   background: #3F93F3;
+  height: 50px;
+  padding-top: 13px;
+  font-size: 15px;
+}
+
+.sign-up .btn-primary:hover {
+  background: #3275C2;
+  color: #65A8F5;
+  transition: all 0.3s ease 0s;
 }
 
 
@@ -227,6 +236,12 @@ body {
   font-size: 20px;
 }
 
+.form-signin .btn:hover {
+  background: #3275C2;
+  color: #65A8F5;
+  transition: all 0.3s ease 0s;
+}
+
 .or {
   margin-top: 25px;
   font-size: 20px;
@@ -243,4 +258,21 @@ body {
   width: 318px;
   color: #FFFFFF;
   background-color: #4C66A4;
+}
+
+.facebook-button:hover {
+  color: lightgray;
+  background-color: #3C5183;
+  transition: all 0.3s ease 0s;
+}
+
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Create Account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.login-session {
+  background-color: #FAFAFA;
 }
