@@ -57,6 +57,7 @@ RSpec.describe "Guest can create Pro Process" do
     expect(current_path).to eq('/pro/dashboard')
 
     latest_user = User.last
+    expect(latest_user.class).to eq Pro
 
     expect(latest_user.first_name).to eq("Arnold")
     expect(latest_user.email).to eq("arny22@gmail.com")
