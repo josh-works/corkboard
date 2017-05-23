@@ -12,7 +12,7 @@ class ProRegisterController < ApplicationController
       flash["success"] = "Logged in as #{@pro.full_name}."
       redirect_to pro_dashboard_path
     else
-      flash.now[:failure] = @pro.errors.full_messages
+      flash.now[:danger] = @pro.errors.full_messages
       render :new
     end
   end

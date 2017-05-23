@@ -12,6 +12,11 @@
 
   <body>
     <%= render "layouts/navbar" %>
+
+    <% flash.each do |type, message| %>
+      <% message = [message] if message.class == String %>
+        <%= content_tag :div, message.join('<br/>').html_safe, class: "alert alert-#{type}"%>
+    <%end%>
     <!-- <div class="container"> -->
       <div class="site-content"><%= yield %></div>
     <!-- </div> -->

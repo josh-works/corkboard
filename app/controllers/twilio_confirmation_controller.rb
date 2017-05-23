@@ -1,7 +1,7 @@
 class TwilioConfirmationController < ApplicationController
 
   def new
-    
+
   end
 
   def create
@@ -9,7 +9,7 @@ class TwilioConfirmationController < ApplicationController
       session[:authenticated] = true
       redirect_to profile_dashboard_path
     else
-      flash.now[:failure] = "The code you entered was not valid."
+      flash.now[:danger] = "The code you entered was not valid."
       render :new
     end
   end

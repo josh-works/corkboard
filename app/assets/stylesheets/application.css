@@ -266,6 +266,7 @@ body {
   width: 318px;
   color: #FFFFFF;
   background-color: #4C66A4;
+  border-radius: 5px;
 }
 
 .facebook-button:hover {
@@ -283,4 +284,19 @@ body {
 
 .login-session {
   background-color: #FAFAFA;
+}
+
+/**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Flash Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+
+.flash-failure {
+
+}
+
+.flash-success {
+  
 }

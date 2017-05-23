@@ -16,6 +16,10 @@ class User < ApplicationRecord
     end
   end
 
+  def update_uid(uid)
+    update_attribute(:uid, uid)
+  end
+
   def is_valid_code?(code)
     verification_code == code
   end
