@@ -8,6 +8,7 @@ RSpec.describe 'user creates a project' do
 
   scenario 'with valid inputs' do
     page.set_rack_session(user_id: user.id)
+    page.set_rack_session(authenticated: true)
 
     visit root_path
 
@@ -36,4 +37,3 @@ RSpec.describe 'user creates a project' do
     expect(current_path).to eq(new_project_confirmation_path(new_project))
   end
 end
-

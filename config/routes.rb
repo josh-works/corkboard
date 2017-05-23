@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro_register/signup', to: 'pro_register#new'
   get '/pro/dashboard', to: 'pro#show'
+  get '/new-project-confirmation/:id', to: 'project#confirmation', as: 'new_project_confirmation'
+  get '/twilio-confirmation', to:'twilio_confirmation#new'
+  post 'twilio-confirmation', to: 'twilio_confirmation#create'
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
   namespace :pro_register do

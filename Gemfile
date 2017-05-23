@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'bcrypt'
+gem 'twilio-ruby'
+
 
 
 group :test do

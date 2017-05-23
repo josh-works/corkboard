@@ -20,19 +20,23 @@ class SessionsController < ApplicationController
 
   def oauth_login(user)
    if user && user.new_record?
-     render :template => "oauth/new", locals: { omniauth_info: oauth_info, user: User.new, name: User.name_from_oauth(oauth_info) }
+     session[:omniauth_info] = oauth_info
+     redirect_to register_path
    else
      session[:user_id] = user.id
+     session[:authenticated] = true
      redirect_to profile_dashboard_path
    end
   end
 
+
   def manual_login(user)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-       redirect_to profile_dashboard_path
+      session[:authenticated] = true
+      redirect_to profile_dashboard_path
     else
-      flash.now[:failure] = user.errors.full_messages
+      flash.now[:danger] =  "Incorrect e-mail and password combination."
       render :new
     end
   end
