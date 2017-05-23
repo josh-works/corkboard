@@ -23,14 +23,16 @@ class SessionsController < ApplicationController
      render :template => "oauth/new", locals: { omniauth_info: oauth_info, user: User.new, name: User.name_from_oauth(oauth_info) }
    else
      session[:user_id] = user.id
-     redirect_to profile_dashboard_path
+     ConfirmationSender.send_confirmation_to(user)
+     redirect_to twilio_confirmation_path
    end
   end
 
   def manual_login(user)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-       redirect_to profile_dashboard_path
+      ConfirmationSender.send_confirmation_to(user)
+      redirect_to twilio_confirmation_path
     else
       flash.now[:failure] = user.errors.full_messages
       render :new
