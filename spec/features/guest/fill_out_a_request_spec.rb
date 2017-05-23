@@ -9,13 +9,13 @@ RSpec.feature 'guest fills out a project request' do
     visit root_path
 
     click_link('home-link')
-    expect(current_path).to eq('/home-improvement')
+    expect(current_path).to eq('/hire/home-improvement')
 
     click_link("#{category.slug}")
-    expect(current_path).to eq('/home-improvement/lawn-care')
+    expect(current_path).to eq('/hire/home-improvement/lawn-care')
 
     click_on("#{service.slug}")
-    expect(current_path).to eq('/hire/mowing')
+    expect(current_path).to eq('/hire/mowing/new')
 
     expect(page).to have_css('.project-form')
 
