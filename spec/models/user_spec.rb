@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
     it { expect(user).to have_many(:user_roles) }
     it { expect(user).to have_many(:roles) }
     it { expect(user).to have_many(:requested_projects).with_foreign_key('requester_id') }
-    it { expect(pro_user).to have_one(:pro_setting) }
+    it { expect(pro_user).to have_one(:pro_service) }
     it { expect(pro_user).to have_one(:industry) }
   end
 end
