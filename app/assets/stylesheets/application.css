@@ -118,19 +118,6 @@ body {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-.jumbotron {
-  margin-top: -20px;
-  margin-bottom: 0;
-  background-size: cover;
-  height: 400px;
-  width: 100%;
-  background-image: asset-url("jumbotron_1.jpg");
-  background-position: 0px -90px;
-  background-color: rgba(78,77,77,.35);
-  background-blend-mode: multiply;
-  color: white;
-}
-
 .jumbotron h1 {
   font-size: 50px;
 }
@@ -191,14 +178,6 @@ body {
   padding: 36px;
   width: 400px;
   margin-left: 75px;
-}
-
-.pro {
-  background-image: image-path("sign_up_pro.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: -120px 0;
-  color: #FFFFFF;
 }
 
 .sign-up .card-title {
