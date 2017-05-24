@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'webmock/rspec'
 require 'stub_omniauth.rb'
+require 'fake_sms.rb'
 # require 'vcr'
 #
 # VCR.configure do |config|

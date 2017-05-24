@@ -18,15 +18,27 @@ class SessionsController < ApplicationController
     request.env["omniauth.auth"]
   end
 
+  def pro_oauth?
+    request.env["omniauth.params"]["user_type"] == "pro"
+  end
+
   def oauth_login(user)
    if user && user.new_record?
      session[:omniauth_info] = oauth_info
-     redirect_to register_path
+     register_redirect(user)
    else
      session[:user_id] = user.id
      session[:authenticated] = true
      redirect_to profile_dashboard_path
    end
+  end
+
+  def register_redirect(user)
+    if pro_oauth?
+      redirect_to new_pro_path(:service_id =>  session[:service_ids])
+    else
+      redirect_to register_path
+    end
   end
 
 
