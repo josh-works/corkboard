@@ -24,11 +24,6 @@ class User < ApplicationRecord
     verification_code == code
   end
 
-  def self.name_from_oauth(oauth_info)
-    full_name = oauth_info["info"]["name"].split(' ')
-    { first: full_name[0], last: full_name[1] }
-  end
-
  def self.locate_by(data, oauth=false)
   oauth ? find_or_initialize_by(uid: data["uid"]) : find_by(email: data)
  end
