@@ -18,7 +18,7 @@
 
 # Ignore application configuration
 /config/application.yml
-
+config/secrets.yml
 
 #ignore VCR gem cassettes
 /spec/cassettes
