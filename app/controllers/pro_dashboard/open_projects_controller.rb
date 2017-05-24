@@ -5,6 +5,6 @@ class ProDashboard::OpenProjectsController < ApplicationController
   end
 
   def show
-    
+    @bid = Bid.new
   end
 end
