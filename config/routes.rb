@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro/dashboard', to: 'pro#show'
   get '/twilio-confirmation', to:'twilio_confirmation#new'
-  post 'twilio-confirmation', to: 'twilio_confirmation#create'
+  post '/twilio-confirmation', to: 'twilio_confirmation#create'
 
   resources :pro, only: [:new, :create]
 
