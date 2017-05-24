@@ -2,9 +2,9 @@
 
 Start by cloning down: git@github.com:NicholasJacques/corkboard.git
 
-Navigate into the Corkboard directory in your terminal 
+Navigate into the Corkboard directory in your terminal
 
-Run the following commands: 
+Run the following commands:
 
 Bundle
 (utilizing "gem install -----" for any missing gems)
@@ -17,7 +17,7 @@ Open the project in text editor of your choice
 
 ----------------------------------------------------------------------------------
 
-In text editor open 'SchemaXML.txt' 
+In text editor open 'SchemaXML.txt'
 
 In your web browser navigate to: http://ondras.zarovi.cz/sql/demo/
 
