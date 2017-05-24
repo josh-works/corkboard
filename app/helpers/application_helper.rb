@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def navbar_service_search
     if logged_in?
-      "<input type='text' class='form-control' placeholder='What service do you need?'>".html_safe
+      "<input type='text' class='form-control' placeholder='What service do you need today, #{current_user.first_name}?'>".html_safe
     end
   end
 

@@ -16,7 +16,6 @@ class ProController < ApplicationController
       ConfirmationSender.send_confirmation_to(@pro)
       session[:user_id] = @pro.id
       session.delete(:service_ids)
-      flash["success"] = "Logged in as #{@pro.full_name}."
       redirect_to twilio_confirmation_path
     else
       flash.now[:danger] = @pro.errors.full_messages
