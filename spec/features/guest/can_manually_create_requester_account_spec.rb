@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Guest Bcrypt Authentication Process" do
-  xit "guest can create an account" do
+  it "guest can create an account" do
     visit '/'
 
     click_on "Sign Up"
@@ -18,14 +18,19 @@ RSpec.describe "Guest Bcrypt Authentication Process" do
 
 
 
-    stub_request(:post, "https://api.twilio.com/2010-04-01/Accounts/ACa54e67dbaaf8ba2007f066cebf1e483b/Messages.json").
-         with(body: {"Body"=>"3094348", "From"=>"5126451696", "To"=>"3944568"},
-              headers: {'Accept'=>'application/json', 'Accept-Charset'=>'utf-8', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'Basic QUNhNTRlNjdkYmFhZjhiYTIwMDdmMDY2Y2ViZjFlNDgzYjowNmJiZjNjNGNkZDdjMGFlYjZhZGU0MjYwNmE3NzVhMg==', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'twilio-ruby/4.13.0 (ruby/x86_64-darwin15 2.3.0-p0)'}).
-         to_return(status: 200, body: "", headers: {})
-
     click_on "Create Account"
 
-    expect(current_path).to eq('/profile/dashboard')
+    expect(current_path).to eq(twilio_confirmation_path)
+
+    last_message = FakeSMS.messages.last
+
+    fill_in "code_verification[code]", with: last_message.body
+
+    click_on "Verify"
+
+    expect(current_path).to eq(profile_dashboard_path)
+
+
 
     latest_user = User.last
 

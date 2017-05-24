@@ -11,6 +11,6 @@ module MessageSender
       body:  code
     )
 
-    message.status == 'queued'
+
   end
 end
