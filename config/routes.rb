@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :pro, only: [:new, :create]
 
   resources :bid, only: [:create]
+  resources :bids, only: [:show]
 
   namespace :pro_dashboard do
     resources :open_projects, only: [:index, :show]
