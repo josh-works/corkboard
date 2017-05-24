@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   post 'twilio-confirmation', to: 'twilio_confirmation#create'
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
+  namespace :pro
+    
+
+  end
+
   namespace :pro_register do
     resources :industry, path: '', only: [:index] do
       resources :category, path: '', only: [:index, :show]
