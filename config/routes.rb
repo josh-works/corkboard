@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro_register/signup', to: 'pro_register#new'
   get '/pro/dashboard', to: 'pro#show'
-  # get '/new-project-confirmation/:id', to: 'project#confirmation', as: 'new_project_confirmation'
   get '/twilio-confirmation', to:'twilio_confirmation#new'
   post 'twilio-confirmation', to: 'twilio_confirmation#create'
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
@@ -28,21 +27,11 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :project, only: [:create]
-
   namespace :hire do
     resources :project, path: ':service', only: [:new, :create]
-  end
-
-  namespace :hire do
     resources :industry, path: '', only: [:show] do
       resources :category, path: '', only: [:show]
     end
   end
-
-  # resources :service, path: 'hire', only: [:show]
-  # resources :industry, path: '', only: [:show] do
-  #   resources :category, path: '', only: [:show]
-  # end
 
 end
