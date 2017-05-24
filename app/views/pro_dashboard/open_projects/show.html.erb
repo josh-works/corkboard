@@ -1,0 +1,5 @@
+<%= bootstrap_form_for(@bid, url: bid_index_path(project_id: @project), method: :post) do |f| %>
+  <%= f.text_field :amount, placeholder: "Enter amount", id: "amount"%><br>
+  <%= f.text_area :comment, placeholder: "Enter any additional comments here" %><br>
+  <%= f.submit "Place Bid", class: "btn login btn-primary" %>
+<% end %>

@@ -16,12 +16,16 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro/dashboard', to: 'pro#show'
   get '/twilio-confirmation', to:'twilio_confirmation#new'
-  post '/twilio-confirmation', to: 'twilio_confirmation#create'
+  post 'twilio-confirmation', to: 'twilio_confirmation#create'
+  get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
   resources :pro, only: [:new, :create]
 
+  resources :bid, only: [:create]
+
   namespace :pro_dashboard do
-    resources :open_projects, only: [:index]
+    resources :open_projects, only: [:index, :show]
+    resources :project_bids, only: [:index]
   end
 
   namespace :pro_register do
