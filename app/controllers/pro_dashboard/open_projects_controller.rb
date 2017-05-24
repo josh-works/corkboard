@@ -3,4 +3,8 @@ class ProDashboard::OpenProjectsController < ApplicationController
     @pro = Pro.find(current_user.id)
     @open_projects = @pro.open_projects
   end
+
+  def show
+    
+  end
 end

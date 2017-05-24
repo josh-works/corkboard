@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'a logged pro can see available projects that match its services' do
+RSpec.describe 'a logged pro can place a bid on an open project' do
   let!(:pro) { create(:pro_user, pro_service: pro_service) }
   let!(:pro_service) { create(:pro_service, service_ids: [service.id]) }
   let!(:project) { create(:project, service: service) }
@@ -8,7 +8,7 @@ RSpec.describe 'a logged pro can see available projects that match its services'
   let!(:category)  { create(:category, name: 'Lawn & Garden', industry: industry) }
   let!(:industry)  { create(:industry, name: 'Home Improvement')}
 
-  it "" do
+  it "will let the pro place a bid" do
     page.set_rack_session(user_id: pro.id, authenticated: true)
 
     visit pro_dashboard_open_projects_path
