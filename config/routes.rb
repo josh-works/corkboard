@@ -17,32 +17,75 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/pro_register/signup', to: 'pro_register#new'
   get '/pro/dashboard', to: 'pro#show'
-  # get '/new-project-confirmation/:id', to: 'project#confirmation', as: 'new_project_confirmation'
   get '/twilio-confirmation', to:'twilio_confirmation#new'
   post 'twilio-confirmation', to: 'twilio_confirmation#create'
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
+  # namespace :pro_register do
+  #   resources :industry, path: '', only: [:index] do
+  #     resources :category, path: '', only: [:index, :show]
+  #   end
+  # end
+
   namespace :pro_register do
-    resources :industry, path: '', only: [:index] do
-      resources :category, path: '', only: [:index, :show]
-    end
+    resources :industry, path: 'industries', only: [:index]
+    resources :industry, path: '', only: [:show]
+    resources :pro, path: ':category', only: [:new, :create]
   end
 
-  # resources :project, only: [:create]
 
   namespace :hire do
     resources :project, path: ':service', only: [:new, :create]
-  end
-
-  namespace :hire do
     resources :industry, path: '', only: [:show] do
       resources :category, path: '', only: [:show]
     end
   end
 
-  # resources :service, path: 'hire', only: [:show]
-  # resources :industry, path: '', only: [:show] do
-  #   resources :category, path: '', only: [:show]
-  # end
-
 end
+
+
+# Rails.application.routes.draw do
+
+#   root 'home#index'
+
+#   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
+#   get '/auth/facebook', as: 'facebook_login'
+#   get '/auth/:provider/callback', to: 'sessions#create'
+#   get '/register', to: 'users#new'
+#   post '/register', to: 'users#create'
+#   get '/login', to: 'sessions#new'
+#   post '/login', to: 'sessions#create'
+#   # post '/pro_register', to: 'pro_register#create'
+#   delete '/logout', to: 'sessions#destroy'
+#   # get '/pro_register/signup', to: 'pro_register#new'
+#   get '/pro/dashboard', to: 'pro#show'
+#   get '/twilio-confirmation', to: 'twilio_confirmation#new'
+#   post 'twilio-confirmation', to: 'twilio_confirmation#create'
+#   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
+
+#   namespace :profile do
+#     get '/dashboard', to: 'dashboard#show'
+#   end
+
+#   namespace :pro_register do
+#     resources :industry, path: 'industries', only: [:index]
+#     resources :industry, path: '', only: [:show]
+#     resources :pro, path: ':category', only: [:new, :create]
+#   end
+
+#   # namespace :pro_register do
+#   #   resources :industry, path: '', only: [:index] do
+#   #     resources :category, path: '', only: [:index] do
+#   #       resources :service, path: '', only: [:index]
+#   #     end
+#   #   end
+#   # end
+
+#   namespace :hire do
+#     resources :project, path: ':service', only: [:new, :create]
+#     resources :industry, path: '', only: [:show] do
+#       resources :category, path: '', only: [:show]
+#     end
+#   end
+
+# end
