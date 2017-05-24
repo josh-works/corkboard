@@ -1,5 +1,6 @@
 class Pro < User
   has_one :pro_service, foreign_key: :user_id
+  has_many :bids
 
   def services
     Service.where(id: pro_service[:service_ids])

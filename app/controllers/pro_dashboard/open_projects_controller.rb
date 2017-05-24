@@ -6,5 +6,6 @@ class ProDashboard::OpenProjectsController < ApplicationController
 
   def show
     @bid = Bid.new
+    @project = Project.find(params[:id])
   end
 end
