@@ -10,6 +10,6 @@ RSpec.describe 'a logged pro can see available projects that match its services'
   let!(:pro) { (create(:pro_user)) }
 
   it 'visits find new projects page and and sees a list of projects that match services' do
-    byebug
+
   end
 end
