@@ -1,0 +1,18 @@
+<div class="service-choices">
+  <h1><%= @category.name %></h1>
+  <%= form_tag(pro_register_signup_path, method: "get")  do %>
+  <table>
+    <tbody class="service_table">
+      <% @services.each do |service| %>
+        <tr>
+          <td>
+            <%= service.name %>
+            <%= check_box_tag "service_id[]", service.id, false%> <br> <br>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= submit_tag "Submit" %>
+  <% end %>
+</div>

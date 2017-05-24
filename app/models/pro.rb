@@ -1,11 +1,8 @@
 class Pro < User
   has_one :pro_service, foreign_key: :user_id
 
-  def service(service = nil)
-    Service.find_by(name: service)
+  def services
+    Service.where(pro_service[:service_ids])
   end
 
 end
-
-
-# pro.pro_service[:service_ids] = services

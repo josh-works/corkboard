@@ -1,14 +1,17 @@
 class ProRegisterController < ApplicationController
 
   def new
-    @service = Service.find(params[:service])
+    @services = Service.where(id: params[:service_id])
+    session[:service_ids] = Service.pro_service_ids(params[:service_id])
     @pro = Pro.new
   end
 
   def create
     @pro = Pro.new(pro_params)
     if @pro.save
-      session[:pro_id] = @pro.id
+      # ConfirmationSender.send_confirmation_to(@pro)
+      session[:user_id] = @pro.id
+      @pro.create_pro_service[:service_ids] = session[:service_ids]
       flash["success"] = "Logged in as #{@pro.full_name}."
       redirect_to pro_dashboard_path
     else

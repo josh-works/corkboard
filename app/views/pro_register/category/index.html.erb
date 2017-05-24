@@ -1,5 +1,5 @@
 <div class="category-choices">
   <% @categories.each do |category| %>
-    <%= link_to category.name, pro_register_industry_category_service_index_path(category.industry, category) %> <br> <br>
+    <%= link_to category.name, pro_register_industry_category_path(category.industry, category) %> <br> <br>
   <% end %>
 </div>
