@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: corkboard_production
   username: corkboard
-  password: <%= ENV['CORKBOARD_DATABASE_PASSWORD'] %>
+  password: s1e9t9h7
+  host: localhost
+  database: corkboard
+  url: <%= ENV["DATABASE_URL"] %>
