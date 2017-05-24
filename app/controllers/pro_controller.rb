@@ -1,6 +1,5 @@
 class ProController < ApplicationController
-  def show
-    binding.pry
+  def show 
     @pro = Pro.find(current_user.id)
   end
 end

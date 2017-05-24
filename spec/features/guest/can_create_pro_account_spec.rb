@@ -7,10 +7,6 @@ RSpec.describe "Guest can create Pro Process" do
     @service1 = @category.services.create!(name: "Lawn Mowing & Trimming")
     @service2 = @category.services.create!(name: "Gardening")
     @service3 = @category.services.create!(name: "Leaf Clean up")
-    # let!(:industry) {build(:industry)}
-    # let!(:category) {build(:category)}
-    # let!(:service) {build(:service)}
-
   end
 
   it "guest can manually create an account (with bcrypt)" do
@@ -74,9 +70,7 @@ RSpec.describe "Guest can create Pro Process" do
 
     expect(latest_user.first_name).to eq("Arnold")
     expect(latest_user.email).to eq("arny22@gmail.com")
-
     expect(latest_user.services.count).to eq(2)
     expect(latest_user.services.first.name).to eq(@service1.name)
-
   end
 end
