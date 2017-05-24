@@ -6,6 +6,19 @@ class Seed
     generate_industries
     generate_categories
     generate_services
+    generate_bids_with_conversations
+  end
+
+  def generate_bids_with_conversations
+    pro = Pro.create(first_name: "Bob", last_name: "Ross", zipcode: "80203", phone_number: "5555555", email: "bross@gmail.com", password: "password")
+
+    pro_service = pro.create_pro_service(service_ids: [1])
+
+    requester = User.create(first_name: "Burt", last_name: "Reynolds", zipcode: "80203", phone_number: "5555554", email: "turdferguson@gmail.com", password: "password")
+
+    project = Project.create(status: "open", zipcode: "80203", recurring: false, description: "Help me.", timeline: "ASAP", requester_id: 2, service_id: 1)
+
+    bid = Bid.create(user_id: 1, project_id: 1, amount: "100", comment: "I can help.", status: "open")
   end
 
   def generate_industries
