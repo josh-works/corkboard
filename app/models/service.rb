@@ -9,6 +9,7 @@ class Service < ApplicationRecord
                    uniqueness: true
 
   belongs_to :category
+  delegate :industry, :to => :category, :allow_nil => false
 
   has_many :projects
 
