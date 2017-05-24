@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Start by cloning down: git@github.com:NicholasJacques/corkboard.git
 
-Things you may want to cover:
+Navigate into the Corkboard directory in your terminal
 
-* Ruby version
+Run the following commands:
 
-* System dependencies
+Bundle
+(utilizing "gem install -----" for any missing gems)
 
-* Configuration
+rake db:create
+rake db:migrate
+rake db:seed
 
-* Database creation
+Open the project in text editor of your choice
 
-* Database initialization
+----------------------------------------------------------------------------------
 
-* How to run the test suite
+In text editor open 'SchemaXML.txt'
 
-* Services (job queues, cache servers, search engines, etc.)
+In your web browser navigate to: http://ondras.zarovi.cz/sql/demo/
 
-* Deployment instructions
+Click Save/Load
 
-* ...
+Paste the contents of SchemaXML into the Input/Output text field and hit "Load XML"
+
+----------------------------------------------------------------------------------
+
+A few notes on the project:
+
+The Pro model is a single table inheritance from the User.
+
+Pro_Services is utilized to deliniate the user type between a Requester(user) and Pro.
+
+In Pro_Services there is a SET data type in the schema diagram (array w/integer in the DB). This is a non-indexed, unique value only array type that we are using to store an array of the service id's that are essentially tags noting what services that professional provides.   
+
+----------------------------------------------------------------------------------
+
+Keys:
+
+Twilio
+
+Facebook
+
+Google
+
+----------------------------------------------------------------------------------
+
+Rspec Test Suite
