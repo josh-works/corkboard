@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     if @user.save
       ConfirmationSender.send_confirmation_to(@user)
       session[:user_id] = @user.id
-      flash["success"] = "Logged in as #{@user.full_name}."
       session.delete(:omniauth_info)
       redirect_to twilio_confirmation_path
     else

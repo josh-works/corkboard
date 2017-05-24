@@ -1,5 +1,5 @@
 class ProController < ApplicationController
-  def show 
+  def show
     @pro = Pro.find(current_user.id)
   end
 
@@ -13,10 +13,10 @@ class ProController < ApplicationController
     @pro = Pro.new(pro_params)
     @pro.create_pro_service[:service_ids] = session[:service_ids]
     if @pro.save
+      ConfirmationSender.send_confirmation_to(@pro)
       session[:user_id] = @pro.id
       session.delete(:service_ids)
-      flash["success"] = "Logged in as #{@pro.full_name}."
-      redirect_to pro_dashboard_path
+      redirect_to twilio_confirmation_path
     else
       flash.now[:danger] = @pro.errors.full_messages
       render :new

@@ -7,9 +7,7 @@ RSpec.describe "Guest Facebook OAuth Process" do
     stub_omniauth
   end
 
-
-
-  xit "guest can create an account" do
+  it "guest can create an account" do
 
     visit facebook_login_path
 
@@ -22,6 +20,16 @@ RSpec.describe "Guest Facebook OAuth Process" do
 
 
     click_on "Create Account"
+
+    expect(current_path).to eq(twilio_confirmation_path)
+
+    last_message = FakeSMS.messages.last
+
+    fill_in "code_verification[code]", with: last_message.body
+
+    click_on "Verify"
+
+    expect(current_path).to eq(profile_dashboard_path)
 
     expect(current_path).to eq('/profile/dashboard')
 

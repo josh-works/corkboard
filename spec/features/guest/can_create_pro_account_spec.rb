@@ -61,6 +61,14 @@ RSpec.describe "Guest can create Pro Process" do
 
     click_on "Create Account"
 
+    expect(current_path).to eq(twilio_confirmation_path)
+
+    last_message = FakeSMS.messages.last
+
+    fill_in "code_verification[code]", with: last_message.body
+
+    click_on "Verify"
+
     expect(current_path).to eq(pro_dashboard_path)
 
     latest_user = Pro.last
