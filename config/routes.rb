@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/pro/dashboard', to: 'pro#show'
   get '/twilio-confirmation', to:'twilio_confirmation#new'
   post 'twilio-confirmation', to: 'twilio_confirmation#create'
+  get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
+  
 
   resources :pro, only: [:new, :create]
 
