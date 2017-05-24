@@ -21,7 +21,7 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'bcrypt'
 gem 'twilio-ruby'
-
+gem 'passenger'
 
 
 group :test do

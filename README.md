@@ -29,9 +29,9 @@ Paste the contents of SchemaXML into the Input/Output text field and hit "Load X
 
 A few notes on the project:
 
-The Pro model is a single table inheritance from the User.
+The Pro model is a single table inheritance from the User. 
 
-Pro_Services is utilized to deliniate the user type between a Requester(user) and Pro.
+Pro_Services is utilized to deliniate the user type between a Requester(user) and Pro. 
 
 In Pro_Services there is a SET data type in the schema diagram (array w/integer in the DB). This is a non-indexed, unique value only array type that we are using to store an array of the service id's that are essentially tags noting what services that professional provides.   
 
@@ -41,7 +41,7 @@ Keys:
 
 Twilio
 
-Facebook
+Facebook 
 
 Google
 
