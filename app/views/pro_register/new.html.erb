@@ -1,22 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
+      <h4>These are the services you provide</h4>
+        <% @services.each do |service| %>
+          <%= service.name %><br>
+        <% end %> <br> <br>
       <h2>Create your account</h1>
     </div>
   </div>
   <div class="form-signin">
-    <%= form_for(@pro, url: pro_register_path, method: :post) do |f| %>
+    <%= bootstrap_form_for(@pro, url: pro_register_path, method: :post) do |f| %>
+      <h4>Account Info</h4>
       <%= f.text_field :first_name, placeholder: "First Name", id: "first_name"%>
       <%= f.text_field :last_name, placeholder: "Last Name", id: "last_name"%>
       <%= f.text_field :zipcode, placeholder: 'Enter Zip Code', id: "zip_code"%>
       <%= f.text_field :phone_number, placeholder: 'Enter Phone Number', id: "phone_number"%>
       <%= f.text_field :email, placeholder: "Email", id: "email"%>
-      <%= f.text_field :service, value: @service.name, readonly: true %>
       <%= f.password_field :password, placeholder: "Password" %>
       <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
       <%= f.submit "Create Account", class: "btn login btn-primary" %>
-    <%end%>
+    <%end%> <br>
 
-    <%= link_to "Sign Up With Facebook", facebook_login_path %>
+    <%= link_to "Sign Up With Facebook", facebook_login_path, class: "btn login btn-primary" %>
   </div>
 </div>
