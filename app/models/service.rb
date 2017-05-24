@@ -11,4 +11,11 @@ class Service < ApplicationRecord
   belongs_to :category
 
   has_many :projects
+
+  def self.pro_service_ids(params)
+    Service.where(id: params).map do |service|
+      service.id
+    end
+  end
+
 end
