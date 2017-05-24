@@ -5,4 +5,8 @@ class Pro < User
     Service.where(id: pro_service[:service_ids])
   end
 
+  def open_projects
+    Project.where(status: :open, service_id: services)
+  end
+
 end

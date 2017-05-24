@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :pro_service do
-    industry nil
-    pro nil
+    service_ids [1]
   end
 end

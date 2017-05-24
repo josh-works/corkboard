@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   resources :pro, only: [:new, :create]
 
+  namespace :pro_dashboard do
+    resources :open_projects, only: [:index]
+  end
+
   namespace :pro_register do
     resources :industry, path: 'industries', only: [:index]
     resources :industry, path: '', only: [:show] do
