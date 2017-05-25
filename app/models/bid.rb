@@ -4,6 +4,7 @@ class Bid < ApplicationRecord
 
   belongs_to :pro, foreign_key: :user_id
   belongs_to :project
+  has_many :messages, dependent: :destroy
 
   enum status: [:open, :accepted, :rejected]
 end
