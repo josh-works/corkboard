@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
-  # resources :chatrooms, param: :slug
   resources :bid, only: [:create]
-  resources :bids, param: :id # , only: [:show]
+  resources :bids
   resources :messages
 
   root 'home#index'

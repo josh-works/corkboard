@@ -1,7 +1,7 @@
 class BidsController < ApplicationController
 
   def create
-    # link to in whatever page will post to this action, so scope params to the requester and pro
+    # link_to helper in whatever page will post to this action, so scope params to the requester and pro
     # find a way to uniquely identify this chatroom
   end
 
