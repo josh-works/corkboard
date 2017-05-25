@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :roles, through: :user_roles
   has_many :requested_projects, :class_name => 'Project', :foreign_key => 'requester_id'
 
+  has_many :messages
+
   def self.from_omniauth(auth_info)
     user = where(uid: auth_info[:uid]).first_or_initialize do |new_user|
       new_user.uid = auth_info.uid
