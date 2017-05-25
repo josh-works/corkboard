@@ -6,15 +6,16 @@
       <th>Service</th>
       <th>Timeline</th>
       <th>Recurring</th>
+      <th>Location</th>
       <th>E-mail</th>
     </tr>
-    <% @open_projects.each do |project| %>
+    <% @to_bid_on.each do |project| %>
       <tr>
         <td><%= link_to "View", pro_dashboard_open_project_path(project) %></td>
-        <td><%= project.created_at %></td>
         <td><%= project.service.name %></td>
         <td><%= project.timeline %></td>
         <td><%= project.recurring %></td>
+        <td><%= project.zipcode %></td>
         <td><%= project.requester.email %></td>
       </tr>
     <% end %>

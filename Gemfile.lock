@@ -89,6 +89,11 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    geocoder (1.4.4)
+    geokit (1.11.0)
+    geokit-rails (2.2.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashdiff (0.3.4)
@@ -293,6 +298,9 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
+  geocoder
+  geokit
+  geokit-rails
   jbuilder (~> 2.5)
   jquery-rails
   launchy

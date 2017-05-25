@@ -20,11 +20,13 @@ gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'geocoder'
+gem 'geokit-rails'
 gem 'bcrypt'
 gem 'twilio-ruby'
 gem 'passenger'
+gem 'geokit'
 gem "paperclip", "~> 5.0.0"
-
 
 group :test do
   gem 'vcr'

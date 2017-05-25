@@ -224,6 +224,9 @@
 <row name="Service_id (array)" null="0" autoincrement="0">
 <datatype>SET</datatype>
 <default>integer</default></row>
+<row name="radius" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
