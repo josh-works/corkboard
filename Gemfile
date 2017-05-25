@@ -20,10 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
+gem 'geokit-rails'
 gem 'bcrypt'
 gem 'twilio-ruby'
 gem 'passenger'
-
+gem 'geokit'
 
 group :test do
   gem 'vcr'
