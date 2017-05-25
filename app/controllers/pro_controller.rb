@@ -6,6 +6,8 @@ class ProController < ApplicationController
   def new
     @oauth_info = OauthParse.new(session[:omniauth_info])
     @services = Service.where(id: params[:service_id])
+    @radius = params[:radius]
+    session[:radius] = params[:radius]
     session[:service_ids] = Service.pro_service_ids(params[:service_id])
     @pro = Pro.new
   end
@@ -13,11 +15,12 @@ class ProController < ApplicationController
   def create
     @pro = Pro.new(pro_params)
     @pro.uid = session[:omniauth_info]['uid'] if omniauth_user
-    @pro.create_pro_service[:service_ids] = session[:service_ids]
+    @pro.create_pro_service(service_ids: session[:service_ids], radius: session[:radius])
     if @pro.save
       ConfirmationSender.send_confirmation_to(@pro)
       session[:user_id] = @pro.id
       session.delete(:service_ids)
+      session.delete(:radius)
       session.delete(:omniauth_info)
       redirect_to twilio_confirmation_path
     else
