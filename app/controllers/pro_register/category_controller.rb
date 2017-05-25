@@ -4,5 +4,5 @@ class ProRegister::CategoryController < ApplicationController
     @category = Category.find(params[:id])
     @services = @category.services.all
   end
-
+  
 end

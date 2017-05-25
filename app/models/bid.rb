@@ -8,4 +8,7 @@ class Bid < ApplicationRecord
   has_many :users, through: :messages
 
   enum status: [:open, :accepted, :rejected]
+
+  has_many :attachments, as: :attachable
+  accepts_nested_attributes_for :attachments
 end

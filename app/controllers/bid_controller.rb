@@ -5,7 +5,10 @@ class BidController < ApplicationController
     @bid.project = Project.find(params[:project_id])
 
     if @bid.save
-      flash["success"] = "You have placed a bid on this project."
+      if params[:bid][:attachments_attributes]
+        @bid.attachments.create(upload: params[:bid][:attachments_attributes]["0"][:upload])
+      end
+      flash["success"] = bid_placed
       redirect_to pro_dashboard_project_bids_path
     else
       flash.now[:danger] = @bid.errors.full_messages

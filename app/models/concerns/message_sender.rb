@@ -10,7 +10,5 @@ module MessageSender
       to:    phone_number,
       body:  code
     )
-
-
   end
 end

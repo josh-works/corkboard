@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524232855) do
+ActiveRecord::Schema.define(version: 20170525055725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.index ["attachable_id"], name: "index_attachments_on_attachable_id", using: :btree
+    t.index ["attachable_type"], name: "index_attachments_on_attachable_type", using: :btree
+  end
 
   create_table "bids", force: :cascade do |t|
     t.integer  "user_id"

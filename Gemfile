@@ -23,6 +23,7 @@ gem 'figaro'
 gem 'bcrypt'
 gem 'twilio-ruby'
 gem 'passenger'
+gem "paperclip", "~> 5.0.0"
 
 
 group :test do
