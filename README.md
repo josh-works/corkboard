@@ -13,6 +13,17 @@ rake db:create
 rake db:migrate
 rake db:seed
 
+(*you might need to enter an additional migration file*)
+(*first check to see if column radius is present in the pro_services table in the schema*)
+(*if it is not...*)
+
+class AddColumnToProService < ActiveRecord::Migration[5.0]
+  def change
+    add_column :pro_services, :radius, :string
+  end
+end
+
+
 Open the project in text editor of your choice
 
 ----------------------------------------------------------------------------------
