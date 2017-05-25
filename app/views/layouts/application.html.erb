@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Corkboard</title>
+    <%= action_cable_meta_tag %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,9 +18,7 @@
       <% message = [message] if message.class == String %>
         <%= content_tag :div, message.join('<br/>').html_safe, class: "alert alert-#{type}"%>
     <%end%>
-    <!-- <div class="container"> -->
       <div class="site-content"><%= yield %></div>
-    <!-- </div> -->
     <%= render "layouts/footer" %>
   </body>
 </html>

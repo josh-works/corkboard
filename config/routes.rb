@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  mount ActionCable.server => '/cable'
+
+  # resources :chatrooms, param: :slug
+  resources :bid, only: [:create]
+  resources :bids, param: :id # , only: [:show]
+  resources :messages
+
   root 'home#index'
 
   namespace :profile do
@@ -20,9 +27,6 @@ Rails.application.routes.draw do
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
   resources :pro, only: [:new, :create]
-
-  resources :bid, only: [:create]
-  resources :bids, only: [:show]
 
   namespace :pro_dashboard do
     resources :open_projects, only: [:index, :show]
