@@ -9,3 +9,17 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+development:
+  FACEBOOK_APP_ID: "291003101346213"
+  FACEBOOK_SECRET: "3f6585e3c1dfed2405a24ebc49cb0237"
+  TWILIO_API_KEY: 'ACa54e67dbaaf8ba2007f066cebf1e483b'
+  TWILIO_TOKEN: '06bbf3c4cdd7c0aeb6ade42606a775a2'
+  TWILIO_PHONE: '5126451696'
+
+test:
+  FACEBOOK_APP_ID: "291003101346213"
+  FACEBOOK_SECRET: "3f6585e3c1dfed2405a24ebc49cb0237"
+  TWILIO_API_KEY: 'ACa54e67dbaaf8ba2007f066cebf1e483b'
+  TWILIO_TOKEN: '06bbf3c4cdd7c0aeb6ade42606a775a2'
+  TWILIO_PHONE: '5126451696'

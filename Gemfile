@@ -47,6 +47,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rack_session_access'
   gem 'rspec-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
