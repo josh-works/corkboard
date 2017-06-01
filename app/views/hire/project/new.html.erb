@@ -31,6 +31,7 @@
     <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project", cols: 40, rows: 7 %></br>
   </div>
 
+<!-- i think below is what needs to change -->
   <div class="form-group" id="upload">
     <%= f.fields_for :attachments, @project.attachments.build do |attachment| %>
       <%= attachment.file_field :upload %><br>
