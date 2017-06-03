@@ -6,19 +6,40 @@ class Seed
     generate_industries
     generate_categories
     generate_services
-    generate_bids_with_conversations
+    generate_users
+    generate_pros
+    generate_projects
+    generate_bids
   end
 
-  def generate_bids_with_conversations
-    pro = Pro.create(first_name: "Bob", last_name: "Ross", zipcode: "80203", phone_number: "5555555", email: "bross@gmail.com", password: "password")
+  def generate_users
+    50.times do |n|
+      user = User.create(first_name: "Burt#{n}", last_name: "Reynolds", zipcode: "80203", phone_number: "5555554", email: "turdferguson#{n}@gmail.com", password: "password")
+      puts "Created #{user.first_name}"
+    end
+  end
 
-    pro_service = pro.create_pro_service(service_ids: [1])
+  def generate_pros
+    @zipps = [80012, 80014, 80110, 80111, 80123, 80202, 80203, 80204, 80205, 80206, 80207, 80209, 80210, 80211, 80212, 80214, 80216, 80218, 80219, 80220, 80221, 80222, 80223, 80224, 80226, 80227, 80230, 80231, 80232, 80235, 80236, 80237, 80238, 80239, 80246, 80247, 80249, 80264, 80290, 80293, 80294]
+    50.times do |n|
+      pro = Pro.create(first_name: "Bob#{n}", last_name: "Ross", zipcode: @zipps.sample, phone_number: "5555555", email: "b#{n}@gmail.com", password: "password")
+      pro.create_pro_service(service_ids: [rand(230..256)], radius: rand(1..10))
+      puts "Created #{pro.first_name}"
+    end
+  end
 
-    requester = User.create(first_name: "Burt", last_name: "Reynolds", zipcode: "80203", phone_number: "5555554", email: "turdferguson@gmail.com", password: "password")
+  def generate_projects
+    50.times do |n|
+      project = Project.create(status: [:open, :accepted, :invoiced, :completed].sample, zipcode: @zipps.sample, recurring: [true, false].sample, description: "i am #{n} years old", timeline: ['ASAP', 'Within 2 Weeks', 'Within 2 Months', 'Whenever'].sample, requester_id: User.all.sample.id, service_id: rand(230..256))
+      puts "#{project.requester_id}"
+    end
+  end
 
-    project = Project.create(status: "open", zipcode: "80203", recurring: false, description: "Help me.", timeline: "ASAP", requester_id: 2, service_id: 1)
-
-    bid = Bid.create(user_id: 1, project_id: 1, amount: "100", comment: "I can help.", status: "open")
+  def generate_bids
+    50.times do |n|
+      bid = Bid.create(user_id: Pro.all.sample.id, project_id: Project.all.sample.id, amount: rand(30..300).to_s, comment: "I THINK THIS NEEDS TO BE A MESSAGE_ID")
+      puts "#{bid.amount}"
+    end
   end
 
   def generate_industries
