@@ -1,4 +1,4 @@
-class ProDashboard::OpenProjectsController < ApplicationController
+class ProDashboard::InProgressController < ApplicationController
   attr_accessor :to_bid_on
   def index
     #add in filter about open/closed status of project

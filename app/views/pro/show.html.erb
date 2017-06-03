@@ -1,5 +1,11 @@
-<%= link_to "Find Projects", pro_dashboard_open_projects_path %><br><br>
+<%= link_to "Find Open Projects", pro_dashboard_open_projects_path %><br><br>
 
 <% @pro.services.each do |service| %>
   <%= service.name %>
 <% end %>
+
+<br><br>
+<br><br>
+<br><br>
+
+<%= link_to "See Projects in Progress", pro_dashboard_open_projects_path %><br><br>
