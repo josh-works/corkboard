@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  namespace :profile do
-    get '/dashboard', to: 'dashboard#show'
-  end
+  get '/dashboard', to: 'users#show'
 
   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
   get '/auth/facebook', as: 'facebook_login'
@@ -40,7 +38,7 @@ Rails.application.routes.draw do
   end
 
   namespace :hire do
-    resources :project, path: ':service', only: [:new, :create]
+    resources :project, path: ':service', only: [:new, :create, :show]
     resources :industry, path: '', only: [:show] do
       resources :category, path: '', only: [:show]
     end

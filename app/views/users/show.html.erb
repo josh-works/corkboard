@@ -1,0 +1,13 @@
+<div class="projects">
+    <% @user.requested_projects.each do |project| %>
+      <div class="project">
+        <ul>
+          <li><%= link_to "View Project", hire_project_path(project.service, project.id) %></li>
+          <li>Service Name: <%= project.service.name %></li>
+          <li>Current Status of this Project: <%= project.status %></li>
+          <li>Recurrence: <%= project.recurring %></li>
+          <li>Timeline: <%= project.timeline %></li>
+        </ul>
+      </div> <br><br><br>
+    <% end %>
+</div>

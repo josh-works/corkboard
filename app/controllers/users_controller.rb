@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_filter :omniauth_user
 
+  def show
+    @user = current_user
+  end
+
   def new
     @user = User.new
     @oauth_info = OauthParse.new(session[:omniauth_info])
