@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   end
 
   namespace :hire do
-    resources :project, path: ':service', only: [:new, :create, :show]
+    resources :project, path: ':service', only: [:new, :create, :show, :update]
     resources :industry, path: '', only: [:show] do
       resources :category, path: '', only: [:show]
     end

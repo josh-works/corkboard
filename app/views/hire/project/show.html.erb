@@ -1,0 +1,14 @@
+<h1> <%= @project.service.name%> </h1 >
+
+<div class="bids">
+    <% @project.bids.each do |bid| %>
+      <div class="bid">
+        <ul>
+
+          <li>Amount: <%= bid.amount %></li>
+          <li>Discussion: <%= bid.comment %></li>
+          <li><%= link_to "Accept Bid", hire_project_path(@project.service.slug, @project.id, project: {status: "accepted"}), method: :put %></li>
+        </ul>
+      </div> <br><br><br>
+    <% end %>
+</div>
