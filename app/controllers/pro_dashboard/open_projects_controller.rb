@@ -8,7 +8,6 @@ class ProDashboard::OpenProjectsController < ApplicationController
 
     @open_projects.each do |open_project|
       distance = @pro_location.distance_to(open_project.zipcode)
-      require "pry"; binding.pry
       if distance < @pro.pro_service.radius.to_i
         @to_bid_on << open_project
       end
