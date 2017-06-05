@@ -24,6 +24,8 @@ RSpec.describe "a logged-in user can see a project they've made and the bids sub
     expect(page).to have_css('.bids')
     expect(page).to have_css('.bid')
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
     within(first('.bid')) do
       expect(page).to have_content("Amount: #{@bid.amount}")
       expect(page).to have_content("Discussion: #{@bid.comment}")
