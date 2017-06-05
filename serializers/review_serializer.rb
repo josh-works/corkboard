@@ -1,3 +1,7 @@
 class ReviewSerializer < ActiveModel::Serializer
 
-end 
+
+
+
+
+end
