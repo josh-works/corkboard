@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :reviews do
     user
-    pro 2
+    pro_user
     body "Baseball's like the boy version of softball"
-    rating 3
+    rating rand(1..5)
   end
 end

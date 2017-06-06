@@ -1,19 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "Reviews API" do
-  xit "shows all reviews" do
-    create_reviews(:review, 3)
+  it "shows all reviews" do
+    create_list(:review, 3)
 
     database_review = Review.first
 
-    get "api/v1/reviews"
+    get "/api/v1/reviews"
 
     reviews = JSON.parse(response.body)
     review = reviews.first
 
     expect(response).to be_success
     expect(review["id"]).to eq(database_review.id)
-    expect(review["body"]).to eq(database_review.id)
+    expect(review["body"]).to eq(database_review.body)
    end
 
    xit "shows one review" do

@@ -48,12 +48,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
+      resources :reviews, only: [:show, :index]
       namespace :reviews do
-        get '/find', to: 'find#show'
-        get '/find_all', to: 'find#index'
-        get 'lowest_rated', to: ''
-        get 'highest_rated', to: ''
-        get 'review_count', to: ''
+        get 'lowest_rated', to: 'highest_rated#show'
+        get 'highest_rated', to: 'lowest_rated#show'
+        get 'review_count', to: 'review_count#show'
       end
     end
   end
