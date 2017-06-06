@@ -48,10 +48,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
       resources :reviews, only: [:show, :index]
+
       namespace :reviews do
         get 'lowest_rated', to: 'highest_rated#show'
         get 'highest_rated', to: 'lowest_rated#show'
-        get 'review_count', to: 'review_count#show'
+        get 'review_count', path: ':pro_id/review_count', to: 'review_count#show'
       end
     end
   end
