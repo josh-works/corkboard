@@ -12,7 +12,7 @@ RSpec.describe 'a logged pro can see available projects that match its services'
   let!(:category)  { create(:category, name: 'Lawn & Garden', industry: industry) }
   let!(:industry)  { create(:industry, name: 'Home Improvement')}
 
-  it 'visits find new projects page and and sees a list of projects that match services' do
+  xit 'visits find new projects page and and sees a list of projects that match services' do
     page.set_rack_session(user_id: pro.id, authenticated: true)
     visit '/pro/dashboard'
 

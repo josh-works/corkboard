@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     if user.type
       redirect_to pro_dashboard_path
     else
-      redirect_to profile_dashboard_path
+      redirect_to dashboard_path
     end
   end
 

@@ -28,7 +28,7 @@ RSpec.describe "Guest Bcrypt Authentication Process" do
 
     click_on "Verify"
 
-    expect(current_path).to eq(profile_dashboard_path)
+    expect(current_path).to eq(dashboard_path)
 
 
 
