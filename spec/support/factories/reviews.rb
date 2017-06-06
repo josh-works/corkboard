@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :reviews do
+    user
     pro
-    project
-    amount "100"
-    comment "I'd like to work on this project."
-    status 0
+    body "Baseball's like the boy version of softball"
+    rating 3
   end
 end
