@@ -29,9 +29,7 @@ RSpec.describe "Guest Facebook OAuth Process" do
 
     click_on "Verify"
 
-    expect(current_path).to eq(profile_dashboard_path)
-
-    expect(current_path).to eq('/profile/dashboard')
+    expect(current_path).to eq(dashboard_path)
 
     latest_user = User.last
 

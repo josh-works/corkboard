@@ -12,7 +12,7 @@ let!(:user) { create(:user) }
 
     click_on "Login"
 
-    expect(current_path).to eq('/profile/dashboard')
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Logout")
   end
 end

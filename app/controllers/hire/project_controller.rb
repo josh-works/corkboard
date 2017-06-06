@@ -1,4 +1,5 @@
 class Hire::ProjectController < ApplicationController
+
   def new
     @service = Service.find(params[:service])
     @project = Project.new
@@ -25,6 +26,24 @@ class Hire::ProjectController < ApplicationController
   def confirmation
     @project = Project.find(params[:id])
     # binding.pry
+  end
+
+  def show
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    #code review?
+    project = Project.find(params[:id])
+    project.status = update_params[:status]
+    project.save
+    redirect_to dashboard_path
+    #flash message
+  end
+
+  private
+  def update_params
+    params.require(:project).permit(:status)
   end
 
 end
