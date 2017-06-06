@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Reviews API" do
-  it "shows all reviews" do
+  xit "shows all reviews" do
     create_reviews(:review, 3)
 
     database_review = Review.first
@@ -13,9 +13,10 @@ RSpec.describe "Reviews API" do
 
     expect(response).to be_success
     expect(review["id"]).to eq(database_review.id)
+    expect(review["body"]).to eq(database_review.id)
    end
 
-   it "shows one review" do
+   xit "shows one review" do
      database_review = create(:review)
      get "api/v1/reviews/#{database_review.id}"
 
@@ -23,5 +24,6 @@ RSpec.describe "Reviews API" do
 
      review = JSON.parse(response.body)
      expect(review["id"]).to eq(database_review.id)
+     expect(review["body"]).to eq(database_review.id)
    end
 end
