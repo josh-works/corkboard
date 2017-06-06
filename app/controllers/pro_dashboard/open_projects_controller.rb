@@ -1,22 +1,12 @@
 class ProDashboard::OpenProjectsController < ApplicationController
   attr_accessor :to_bid_on
   def index
-    #add in filter about open/closed status of project
-    @pro = Pro.find(current_user.id)
-    @pro_location = Geokit::Geocoders::GoogleGeocoder.geocode(@pro.zipcode)
-    @open_projects = @pro.open_projects
-
-    @to_bid_on = []
-
-    @open_projects.each do |open_project|
-      request_location = open_project.zipcode
-      distance = @pro_location.distance_to(request_location)
+    @pro = Pro.find(current_user.id)  # MapDecorator.new(@pro.zipcode) <-- this ideally returns a @pro_location object via an attr_reader that i can use here to loop the .distance_to method against open proj zips... but the below method may usurp it
+    @to_bid_on = @pro.open_projects.map do |open_project|
+      distance = Geokit::Geocoders::GoogleGeocoder.geocode(@pro.zipcode).distance_to(open_project.zipcode)
       if distance < @pro.pro_service.radius.to_i
-        @to_bid_on << open_project
-      else
       end
     end
-    # request_location = Geokit::Geocoders::GoogleGeocoder.geocode(@pro.zipcode)
   end
 
   def show
