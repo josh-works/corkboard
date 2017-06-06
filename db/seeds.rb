@@ -11,7 +11,7 @@ class Seed
     generate_projects
     generate_bids
     generate_messages
-    # generate_reviews
+    generate_reviews
   end
 
   def generate_users
@@ -51,12 +51,12 @@ class Seed
     end
   end
 
-  # def generate_reviews
-  #   200.times do |n|
-  #     Review.create!(rating: rand(1..5), body: Faker::ChuckNorris.fact, user_id: User.all.sample.id, pro_id: Pro.all.sample.id)
-  #     puts "created #{n} reviews"
-  #   end
-  # end
+  def generate_reviews
+    200.times do |n|
+      Review.create!(rating: rand(1..5), body: Faker::ChuckNorris.fact, user_id: User.all.sample.id, pro_id: Pro.all.sample.id)
+      puts "created #{n} reviews"
+    end
+  end
 
   def generate_industries
     industries.each do |industry|
