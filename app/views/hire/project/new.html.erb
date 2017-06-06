@@ -34,7 +34,7 @@
 <!-- i think below is what needs to change -->
   <div class="form-group" id="upload">
     <%= f.fields_for :attachments, @project.attachments.build do |attachment| %>
-      <%= attachment.file_field :upload %><br>
+      <%= attachment.file_field :upload, multiple: true %><br>
     <% end %>
   </div>
 
