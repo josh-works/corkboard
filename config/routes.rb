@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
 
-  mount ActionCable.server => '/cable'
+  mount ActionCable.server => 'server/cable'
 
   resources :bid, only: [:create]
   resources :bids
   resources :messages
-
+  
   root 'home#index'
-
+  
+  namespace :bids do
+    resources :payments, only: [:new, :create]
+  end
   namespace :profile do
     get '/dashboard', to: 'dashboard#show'
   end
-
   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
   get '/auth/facebook', as: 'facebook_login'
   get '/auth/:provider/callback', to: 'sessions#create'
@@ -26,7 +28,6 @@ Rails.application.routes.draw do
   get '/hire/new-project-confirmation/:id', to: 'hire/project#confirmation', as: 'new_project_confirmation'
 
   resources :pro, only: [:new, :create]
-
   namespace :pro_dashboard do
     resources :open_projects, only: [:index, :show]
     resources :project_bids, only: [:index]

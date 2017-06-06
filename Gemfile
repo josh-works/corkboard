@@ -27,6 +27,7 @@ gem 'twilio-ruby'
 gem 'passenger'
 gem 'geokit'
 gem "paperclip", "~> 5.0.0"
+gem 'stripe'
 
 group :test do
   gem 'vcr'
@@ -49,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails-erd'
 end
 
 group :development do
