@@ -27,6 +27,7 @@ gem 'twilio-ruby'
 gem 'passenger'
 gem 'geokit'
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 
 group :test do
   gem 'vcr'
