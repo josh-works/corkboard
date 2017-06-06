@@ -16,14 +16,15 @@ RSpec.describe "Reviews API" do
     expect(review["body"]).to eq(database_review.body)
    end
 
-   xit "shows one review" do
+   it "shows one review" do
      database_review = create(:review)
-     get "api/v1/reviews/#{database_review.id}"
+     
+     get "/api/v1/reviews/#{database_review.id}"
 
      expect(response).to be_success
 
      review = JSON.parse(response.body)
      expect(review["id"]).to eq(database_review.id)
-     expect(review["body"]).to eq(database_review.id)
+     expect(review["body"]).to eq(database_review.body)
    end
 end
