@@ -11,5 +11,6 @@ class Project < ApplicationRecord
   belongs_to :service
 
   has_many :attachments, as: :attachable
+  has_many :bids
   accepts_nested_attributes_for :attachments
 end
