@@ -6,7 +6,8 @@ RSpec.describe 'a logged-in pro' do
   let(:project) { create(:project, requester: requester) }
   let(:bid) { create(:bid, project: project, pro: pro)}
 
-  xit "can view a bid" do
+  xit "can view a request" do
+    #never built out the other side of this conversation 
     page.set_rack_session(user_id: pro.id, authenticated: true)
 
     visit "/bids/#{bid.id}"
@@ -17,8 +18,6 @@ RSpec.describe 'a logged-in pro' do
 
     click_on "Send"
 
-    within(:css, ".panel-body") do
-      expect(page).to have_content("Yo")
-    end
+    expect(page).to have_content("Yo")
   end
 end

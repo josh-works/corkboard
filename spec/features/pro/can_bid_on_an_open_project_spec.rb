@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'a logged-in pro can place a bid on an open project' do
+RSpec.describe 'NEED API TO BE BELOW LIMIT a logged-in pro can place a bid on an open project' do
   let!(:pro) { create(:pro_user, pro_service: pro_service) }
   let!(:pro_service) { create(:pro_service, service_ids: [service.id]) }
   let!(:project) { create(:project, service: service) }

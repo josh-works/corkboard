@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'a logged pro can see available projects that match its services' do
+RSpec.describe 'NEED API TO BE BELOW LIMIT a logged pro can see available projects that match its services' do
   let!(:project_2_email) { project_2.requester.email }
   let!(:project_1_email) { project_1.requester.email }
   let!(:pro) { create(:pro_user, pro_service: pro_service) }
@@ -16,7 +16,7 @@ RSpec.describe 'a logged pro can see available projects that match its services'
     page.set_rack_session(user_id: pro.id, authenticated: true)
     visit '/pro/dashboard'
 
-    click_link 'Find Projects'
+    click_link 'Find Open Projects'
 
     expect(current_path).to eq('/pro_dashboard/open_projects')
 

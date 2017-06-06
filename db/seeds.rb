@@ -31,7 +31,7 @@ class Seed
   end
 
   def generate_projects
-    50.times do |n|
+    5000.times do |n|
       project = Project.create(status: [:open, :accepted, :invoiced, :completed].sample, zipcode: @zipps.sample, recurring: [true, false].sample, description: "i am #{n} years old", timeline: ['ASAP', 'Within 2 Weeks', 'Within 2 Months', 'Whenever'].sample, requester_id: User.all.sample.id, service_id: rand(230..256))
       puts "#{project.requester_id}"
     end
