@@ -17,7 +17,7 @@ class Review < ApplicationRecord
 
   def self.highest_rated(category)
     # find the category
-    # find all the pros
+    # find all the pros associated with that category
     # find total_average of each pro
     # organize pros by highest to lowest
 
@@ -25,9 +25,9 @@ class Review < ApplicationRecord
 
   def self.lowest_rated(category)
     # find the category
-    # find all the pros
+    # find all the pros associated with that category
     # find total_average of each pro
-    # organize pros by lowest to highest  
+    # organize pros by lowest to highest
   end
 
 end
