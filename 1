@@ -1,0 +1,22 @@
+class ChargesController < ApplicationController
+  def new
+    
+  end
+
+  def create
+    binding.pry    
+    @bid = Bid.create(amount:"78", comment: "good", project_id: 122)
+    
+
+    charge = Stripe::Charge.create(
+      amount: 2,
+      description: "Good charge",
+      currency: "USD"
+      )    
+      if charge.save
+        redirect_to pro_dashboard_project_bids_path
+      else
+        redirect_to new_charge_path
+      end
+  end
+end

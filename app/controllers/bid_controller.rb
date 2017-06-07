@@ -1,10 +1,11 @@
 class BidController < ApplicationController
   def create
-    @bid = Bid.new(bid_params)
+    
+@bid = Bid.create(amount:"78", comment: "good", project_id: 122)    
     @bid.pro = Pro.find(current_user.id)
     @bid.project = Project.find(params[:project_id])
 
-    if @bid.save
+if @bid.save
       if params[:bid][:attachments_attributes]
         @bid.attachments.create(upload: params[:bid][:attachments_attributes]["0"][:upload])
       end
@@ -13,9 +14,8 @@ class BidController < ApplicationController
     else
       flash.now[:danger] = @bid.errors.full_messages
       render '/pro_dashboard/open_projects/show'
-    end
   end
-
+end
   private
 
   def bid_params

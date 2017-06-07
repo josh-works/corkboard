@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :bid, only: [:create]
   resources :bids
   resources :messages
+  resources :charges, only: [:new, :create]
 
   root 'home#index'
 

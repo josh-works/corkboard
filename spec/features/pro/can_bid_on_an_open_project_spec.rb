@@ -29,4 +29,21 @@ RSpec.describe 'a logged-in pro can place a bid on an open project' do
     expect(bid.comment).to eq("I'd like to work on this project.")
     expect(bid.status).to eq("open")
   end
+	
+	it "charges a pro credit card before creating a bid" do
+		bid = Bid.create(user_id: pro.id, project_id: project.id, amount: "1492", comment: "I know how to use a hammer")
+
+		visit new_charge_path
+    
+    click_button "Pay with Card"
+
+		fill_in "Email", with: "wayne@aol.com"
+		fill_in "Card Number", with: "4242424242424242"
+		fill_in "MM/YY", with: "01/24"
+		fill_in "CVC", with: "123"
+
+		click_button "Submit Payment"
+
+		expect(current_path).to eq(pro_dashboard_project_bids_path)
+	end
 end
