@@ -8,14 +8,14 @@
 
           <li>Amount: <%= bid.amount %></li>
           <li>Discussion: <%= bid.comment %></li>
-          <li > <button id="accept-bid">Accept Bid</button> <%#= button_to "Accept Bid", hire_project_path(@project.service.slug, @project.id, project: {status: "accepted"}), method: :put, class: "btn btn-primary" %></li>
+          <li > <button class="accept-bid">Accept Bid</button> <%#= button_to "Accept Bid", hire_project_path(@project.service.slug, @project.id, project: {status: "accepted"}), method: :put, class: "btn btn-primary" %></li>
         </ul>
       </div> <br><br><br>
     <% end %>
 </div>
 
 <script type="text/javascript">
-  $('#accept-bid').on('click', function() {
+  $('.accept-bid').on('click', function() {
     function updateStatus() {
       return $.ajax({
         url: "http://localhost:3000/" + "hire/" + '<%=@project.service.slug%>' + '/' + '<%=@project.id %>',
