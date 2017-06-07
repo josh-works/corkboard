@@ -1,8 +1,7 @@
 class Api::V1::Reviews::ReviewAverageController < ApplicationController
 
   def show
-
-  end 
-
-
+    render json: Review.total_average(params[:pro_id])
+  end
+  
 end

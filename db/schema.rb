@@ -130,8 +130,8 @@ ActiveRecord::Schema.define(version: 20170606005446) do
     t.string   "email"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "type"
     t.string   "uid"
+    t.string   "type"
     t.string   "password"
     t.string   "password_digest"
     t.string   "verification_code"
