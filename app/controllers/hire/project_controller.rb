@@ -6,7 +6,6 @@ class Hire::ProjectController < ApplicationController
   end
 
   def create
-    # binding.pry
     project = Project.create(zipcode:     params[:project][:zipcode],
                              recurring:   params[:project][:recurring],
                              description: params[:project][:description],
@@ -14,7 +13,6 @@ class Hire::ProjectController < ApplicationController
                              requester:   current_user,
                              service_id:  params[:project][:service_id])
     if params[:project][:attachments_attributes]
-      # project.attachments.create(upload: params[:project][:attachments_attributes]["0"][:upload].first)
       params[:project][:attachments_attributes]["0"][:upload].each do |upload|
         project.attachments.create(upload: upload)
       end
@@ -25,7 +23,6 @@ class Hire::ProjectController < ApplicationController
 
   def confirmation
     @project = Project.find(params[:id])
-    # binding.pry
   end
 
   def show
