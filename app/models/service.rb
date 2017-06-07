@@ -12,6 +12,7 @@ class Service < ApplicationRecord
   delegate :industry, :to => :category, :allow_nil => false
 
   has_many :projects
+  has_many :reviews 
 
   def self.pro_service_ids(params)
     Service.where(id: params).map do |service|

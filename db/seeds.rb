@@ -53,7 +53,7 @@ class Seed
 
   def generate_reviews
     200.times do |n|
-      Review.create!(rating: rand(1..5), body: Faker::ChuckNorris.fact, user_id: User.all.sample.id, pro_id: Pro.all.sample.id)
+      Review.create!(rating: rand(1..5), body: Faker::ChuckNorris.fact, user_id: User.all.sample.id, pro_id: Pro.all.sample.id, service_id: Service.all.sample.id)
       puts "created #{n} reviews"
     end
   end
