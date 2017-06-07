@@ -1,0 +1,4 @@
+<h1>Uploaded images:</h1>
+<% @project.attachments.each do |a| %>
+  <%=image_tag a.upload.url %>
+<% end %>

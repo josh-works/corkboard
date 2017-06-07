@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :customer, class: Role do
-    name 'customer'
+    name 'customer' 
   end
 
 end

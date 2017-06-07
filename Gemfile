@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'geokit-rails'
 gem 'bcrypt'
 gem 'twilio-ruby'
@@ -28,6 +29,7 @@ gem 'passenger'
 gem 'geokit'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
+gem "jquery-fileupload-rails"
 
 group :test do
   gem 'vcr'

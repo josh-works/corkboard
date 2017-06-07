@@ -13,6 +13,7 @@ class Service < ApplicationRecord
 
   has_many :projects
 
+
   def self.pro_service_ids(params)
     Service.where(id: params).map do |service|
       service.id
