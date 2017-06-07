@@ -22,9 +22,11 @@
         method: 'PUT',
         dataType: 'json',
         data: { project: { id: <%= @project.id %>, status: 'accepted'} },
-      }).done(function() {
-        debugger;
-        $("#project-status h2").html("moneey");
+      }).done(function(data) {
+        // debugger;
+        $("#project-status").html("").append('Status: accepted')
+      }).fail(function(error) {
+        console.log(error)
       })
     }
     updateStatus()

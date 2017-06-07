@@ -32,7 +32,7 @@ class Hire::ProjectController < ApplicationController
     project = Project.find(params[:id])
     project.status = update_params[:status]
     project.save
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
     #flash message
   end
 
