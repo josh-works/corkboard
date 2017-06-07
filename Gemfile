@@ -30,6 +30,7 @@ gem 'geokit'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem "jquery-fileupload-rails"
+gem 'faraday'
 
 group :test do
   gem 'vcr'
