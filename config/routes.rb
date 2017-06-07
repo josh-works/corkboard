@@ -53,6 +53,7 @@ Rails.application.routes.draw do
         get 'lowest_rated', to: 'highest_rated#show'
         get 'highest_rated', to: 'lowest_rated#show'
         get 'review_count', path: ':pro_id/review_count', to: 'review_count#show'
+        get 'review_average', path: ':pro_id/review_average', to: 'review_average#show'
       end
     end
   end
