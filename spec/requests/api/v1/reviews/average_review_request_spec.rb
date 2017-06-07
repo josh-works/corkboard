@@ -7,10 +7,11 @@ RSpec.describe "Reviews API" do
 
     get "/api/v1/reviews/#{pro.id}/review_average"
 
+    reviews = response.body
+
     expect(response).to be_success
 
-    expect(reviews).to eq("4")
+    expect(reviews).to eq("2")
 
   end
-
 end

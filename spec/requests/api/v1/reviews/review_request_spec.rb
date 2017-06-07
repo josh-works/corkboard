@@ -18,7 +18,7 @@ RSpec.describe "Reviews API" do
 
    it "shows one review" do
      database_review = create(:review)
-     
+
      get "/api/v1/reviews/#{database_review.id}"
 
      expect(response).to be_success

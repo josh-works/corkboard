@@ -2,32 +2,26 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :pro
 
-  # validates :body, :rating
-
-  def self.total_count(pro)
-    where(pro_id: pro).count
-  end
+    def self.total_count(pro)
+      where(pro_id: pro).count
+    end
 
   def self.total_average(pro)
-    # find the pro
-    # get all the ratings
-    # add all the ratings
-    # divide by number of ratings
+    where(pro_id: pro).average(:rating).to_i
   end
+  #
+  # def self.highest_rated(category)
+  #   # find the category
+  #   # find all the pros associated with that category
+  #   # find total_average of each pro
+  #   # organize pros by highest to lowest
+  #
+  # end
 
-  def self.highest_rated(category)
-    # find the category
-    # find all the pros associated with that category
-    # find total_average of each pro
-    # organize pros by highest to lowest
-
-  end
-
-  def self.lowest_rated(category)
-    # find the category
-    # find all the pros associated with that category
-    # find total_average of each pro
-    # organize pros by lowest to highest
-  end
-
+  # def self.lowest_rated(category)
+  #   # find the category
+  #   # find all the pros associated with that category
+  #   # find total_average of each pro
+  #   # organize pros by lowest to highest
+  # end
 end
