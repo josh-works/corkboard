@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles
   has_many :requested_projects, :class_name => 'Project', :foreign_key => 'requester_id'
-  has_many :reviews
 
   has_many :messages
 

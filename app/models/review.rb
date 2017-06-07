@@ -1,7 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :pro
-  belongs_to :service
 
 
     def self.total_count(pro)
