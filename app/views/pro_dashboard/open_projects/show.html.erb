@@ -1,32 +1,26 @@
-<%= bootstrap_form_for(@bid, url: bid_index_path(project_id: @project), method: :post) do |f| %>
+<center><%= bootstrap_form_for(@bid, url: bid_index_path(project_id: @project), method: :post) do |f| %>
   <%= f.text_field :amount, placeholder: "Enter amount", id: "amount"%><br>
   <%= f.text_area :comment, placeholder: "Enter any additional comments here" %><br>
-  
+
   <div class="form-group" id="upload">
     <%= f.fields_for :attachments, @bid.attachments.build do |attachment| %>
       <%= attachment.file_field :upload %><br>
     <% end %>
+  <p>You must pay $2.00 for this bid before it is submitted to <%= @project.requester.first_name %></p>
+  <%= f.submit "Pay with Card", class: "btn login btn-primary" %>
   </div>
+<% end %></center>
 
-  <%= f.submit "Place Bid", class: "btn login btn-primary" %>
-  </div>
-<% end %>
 
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
+      <%= f.submit "Make a Payment", class: "btn login btn-primary" %>
+  </div>
+<% end %>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-<% end %>
+</center>
+</div>

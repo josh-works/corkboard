@@ -12,7 +12,11 @@ module FlashMessages
   end
 
   def bid_placed
-    "You have placed a bid on this project."
+    "Payment successful. Your bid has been placed."
+  end
+
+  def charge_declined
+    "Your payment was unsuccessful. Please try again."
   end
 
 end

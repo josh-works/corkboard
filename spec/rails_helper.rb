@@ -8,7 +8,10 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'webmock/rspec'
 require 'stub_omniauth.rb'
+require 'stub_stripe.rb'
 require 'fake_sms.rb'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 # require 'vcr'
 #
 # VCR.configure do |config|

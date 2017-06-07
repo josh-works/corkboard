@@ -1,8 +1,10 @@
 class ProDashboard::OpenProjectsController < ApplicationController
   attr_accessor :to_bid_on
   def index
-    #add in filter about open/closed status of project
+   #add in filter about open/closed status of project
+
     @pro = Pro.find(current_user.id)
+
 #    @pro_location = Geokit::Geocoders::GoogleGeocoder.geocode(@pro.zipcode)
     @open_projects = @pro.open_projects
 
@@ -13,7 +15,7 @@ class ProDashboard::OpenProjectsController < ApplicationController
    #   distance = @pro_location.distance_to(request_location)
     #  if distance < @pro.pro_service.radius.to_i
      #   @to_bid_on << open_project
-     
+
   #else
    #   end
     end
