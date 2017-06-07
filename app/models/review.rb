@@ -8,7 +8,8 @@ class Review < ApplicationRecord
     end
 
     def self.total_average(pro)
-      where(pro_id: pro).average(:rating).to_i
+      service = ProReviewService.new
+      service.find_average(pro_id)
     end
 
 
