@@ -3,6 +3,6 @@ FactoryGirl.define do
     user
     pro
     body "Baseball's like the boy version of softball"
-    rating {rand(1..5)}
+    rating 5
   end
 end

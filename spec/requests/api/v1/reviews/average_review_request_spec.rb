@@ -11,7 +11,7 @@ RSpec.describe "Reviews API" do
 
     expect(response).to be_success
 
-    expect(reviews).to eq("2")
+    expect(reviews).to eq("5")
 
   end
 end
