@@ -1,4 +1,8 @@
+require 'securerandom'
+
 class User < ApplicationRecord
+  # before_create :set_auth_token
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :zipcode, presence: true
@@ -26,11 +30,22 @@ class User < ApplicationRecord
     verification_code == code
   end
 
- def self.locate_by(data, oauth=false)
-  oauth ? find_or_initialize_by(uid: data["uid"]) : find_by(email: data)
- end
+  def self.locate_by(data, oauth=false)
+   oauth ? find_or_initialize_by(uid: data["uid"]) : find_by(email: data)
+  end
 
- def full_name
-   "#{first_name} #{last_name}"
- end
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  # private
+  #   def set_auth_token
+  #     return if auth_token.present?
+  #     self.auth_token = generate_auth_token
+  #   end
+  #
+  #   def generate_auth_token
+  #     SecureRandom.uuid.gsub(/\-/,'')
+  #   end
+
 end
