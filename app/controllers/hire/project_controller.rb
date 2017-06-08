@@ -13,7 +13,9 @@ class Hire::ProjectController < ApplicationController
                              requester:   current_user,
                              service_id:  params[:project][:service_id])
     if params[:project][:attachments_attributes]
-      project.attachments.create(upload: params[:project][:attachments_attributes]["0"][:upload])
+      params[:project][:attachments_attributes]["0"][:upload].each do |upload|
+        project.attachments.create(upload: upload)
+      end
     end
 
     redirect_to new_project_confirmation_path(project)

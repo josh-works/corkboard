@@ -31,9 +31,10 @@
     <%= f.text_area :description, placeholder: "The more details you provide here, the more accurately contracters will be able to provide bid for his project", cols: 40, rows: 7 %></br>
   </div>
 
+<!-- i think below is what needs to change -->
   <div class="form-group" id="upload">
     <%= f.fields_for :attachments, @project.attachments.build do |attachment| %>
-      <%= attachment.file_field :upload %><br>
+      <%= attachment.file_field :upload, multiple: true %><br>
     <% end %>
   </div>
 
@@ -43,3 +44,6 @@
     <p><%=link_to "Login", login_path %> or <%= link_to "Sign Up", choose_account_path %> to request this project</p>
   <% end %>
 <% end %>
+
+<%# jquery upload template # %>
+<!-- <script id="template-upload" type="text/x-tmpl"><div class="upload">{%=o.name%}<div class="progress"><div class="bar" style="width: 0%"></div></div></div></script> -->

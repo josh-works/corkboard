@@ -48,6 +48,12 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
       resources :autocomplete, only: [:index]
+      
+      resources :reviews, only: [:show, :index]
+      namespace :reviews do
+        get 'review_count', path: ':pro_id/review_count', to: 'review_count#show'
+        get 'review_average', path: ':pro_id/review_average', to: 'review_average#show'
+      end
     end
   end
 end
