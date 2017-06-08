@@ -1,12 +1,29 @@
 Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
+  mount Blazer::Engine, at: "blazer"
 
   resources :bid, only: [:create]
   resources :bids
   resources :messages
 
   root 'home#index'
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      namespace :bids do
+        get "/highest_revenue",    to: "bid_stats#index"
+        get "/revenue_per_service",    to: "bid_stats#show"
+      end
+      namespace :projects do
+        get "/most_bid_project",    to: "project_stats#index"
+        get "/most_requested_project",    to: "project_stats#show"
+      end
+      namespace :pros do
+        get "/highest_pro_radius",    to: "pro_stats#index"
+      end
+    end
+  end
 
   namespace :profile do
     get '/dashboard', to: 'dashboard#show'
