@@ -11,6 +11,11 @@
 <%= link_to "See Projects in Progress", pro_dashboard_open_projects_path %><br><br>
 
 <div class="rating">
+  <body>
       <h1>Reviews</h1>
-      <%= @pro_reviews.all %>
+      <%=@pro_reviews.each do |review| %>
+      <%= review[:rating] %>
+      <%= review[:body] %>
+      <br>
+    </body>
 </div>
