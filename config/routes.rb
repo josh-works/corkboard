@@ -19,15 +19,10 @@ Rails.application.routes.draw do
         get "/most_bid_project",    to: "project_stats#index"
         get "/most_requested_project",    to: "project_stats#show"
       end
-      namespace :pros do
-        get "/highest_pro_radius",    to: "pro_stats#index"
-      end
     end
   end
 
-  namespace :profile do
-    get '/dashboard', to: 'dashboard#show'
-  end
+  get '/dashboard', to: 'users#show'
 
   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
   get '/auth/facebook', as: 'facebook_login'
@@ -57,10 +52,21 @@ Rails.application.routes.draw do
   end
 
   namespace :hire do
-    resources :project, path: ':service', only: [:new, :create]
+    resources :project, path: ':service', only: [:new, :create, :update]
+    resources :project, only: [:show]
     resources :industry, path: '', only: [:show] do
       resources :category, path: '', only: [:show]
     end
   end
 
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :reviews, only: [:show, :index]
+
+      namespace :reviews do
+        get 'review_count', path: ':pro_id/review_count', to: 'review_count#show'
+        get 'review_average', path: ':pro_id/review_average', to: 'review_average#show'
+      end
+    end
+  end
 end

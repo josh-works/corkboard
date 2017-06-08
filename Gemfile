@@ -22,12 +22,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'geokit-rails'
 gem 'bcrypt'
 gem 'twilio-ruby'
 gem 'passenger'
 gem 'geokit'
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
+gem "jquery-fileupload-rails"
+gem 'faker'
 
 group :test do
   gem 'vcr'
@@ -44,7 +48,6 @@ group :development, :test do
   gem 'pry'
   gem 'awesome_print', require: 'ap'
   gem 'byebug', platform: :mri
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'rack_session_access'
   gem 'rspec-rails'

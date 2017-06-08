@@ -10,6 +10,8 @@ class Seed
     generate_pros
     generate_projects
     generate_bids
+    generate_messages
+    generate_reviews
   end
 
   def generate_users
@@ -39,6 +41,20 @@ class Seed
     120000.times do |n|
       bid = Bid.create(user_id: Pro.all.sample.id, project_id: Project.all.sample.id, amount: rand(30..300).to_s, comment: "I THINK THIS NEEDS TO BE A MESSAGE_ID")
       puts "#{bid.amount}"
+    end
+  end
+
+  def generate_messages
+    200.times do |n|
+      Message.create!(content: Faker::ChuckNorris.fact, user_id: User.all.sample.id, bid_id: Bid.all.sample.id)
+      puts "created #{n} messages"
+    end
+  end
+
+  def generate_reviews
+    200.times do |n|
+      Review.create!(rating: rand(1..5), body: Faker::ChuckNorris.fact, user_id: User.all.sample.id, pro_id: Pro.all.sample.id, service_id: Service.all.sample.id)
+      puts "created #{n} reviews"
     end
   end
 
