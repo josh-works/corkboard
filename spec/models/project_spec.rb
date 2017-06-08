@@ -24,7 +24,6 @@ RSpec.describe Project, type: :model do
   end
 
   describe 'enums' do
-
     it { should define_enum_for(:status).with([:open, :accepted, :invoiced, :completed]) }
     it 'is open by default' do
       expect(Project.new.status).to eq('open')

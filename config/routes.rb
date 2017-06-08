@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
+  mount Blazer::Engine, at: "blazer"
 
   resources :bid, only: [:create]
   resources :bids
@@ -8,7 +9,22 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      namespace :bids do
+        get "/highest_revenue",    to: "bid_stats#index"
+        get "/revenue_per_service",    to: "bid_stats#show"
+      end
+      namespace :projects do
+        get "/most_bid_project",    to: "project_stats#index"
+        get "/most_requested_project",    to: "project_stats#show"
+      end
+    end
+  end
+
   get '/dashboard', to: 'users#show'
+
+  get '/generate_api_key', to: 'api_keys#show'
 
   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
   get '/auth/facebook', as: 'facebook_login'
