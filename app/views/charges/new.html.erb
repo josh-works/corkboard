@@ -16,6 +16,7 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A bid on a Corkboard project"
           data-amount="200"
+          data-email="<%= current_user.email %>"
           data-locale="auto"></script>
 <% end %></center>
 </div>

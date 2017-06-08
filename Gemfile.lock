@@ -88,6 +88,10 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    fake_stripe (0.0.12)
+      capybara
+      sinatra
+      webmock
     faker (1.7.3)
       i18n (~> 0.5)
     faraday (0.11.0)
@@ -137,6 +141,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    mustermann (1.0.0)
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
@@ -176,6 +181,8 @@ GEM
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rack_session_access (0.1.1)
@@ -243,6 +250,11 @@ GEM
       activesupport (>= 3)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
     slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
@@ -311,6 +323,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   factory_girl_rails
+  fake_stripe
   faker
   figaro
   font-awesome-sass

@@ -40,6 +40,7 @@ group :test do
   gem 'shoulda-callback-matchers', '~> 1.1.1'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'poltergeist'
+  gem 'fake_stripe'
 end
 
 group :development, :test do

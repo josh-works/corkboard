@@ -31,11 +31,11 @@ RSpec.describe 'a logged-in pro can place a bid on an open project' do
   end
 
 	it "charges a pro credit card before creating a bid", js: true do
-    stub_charge
+
 		bid = Bid.create(user_id: pro.id, project_id: project.id, amount: "1492", comment: "I know how to use a hammer")
 
 		visit pro_dashboard_open_project_path(project)
-expect(page).to have_link("Pay with Card", :href=>"https://checkout.stripe.com/checkout.js")
+
     click_on "Pay with Card"
 
 		fill_in "Email", with: "wayne@aol.com"
