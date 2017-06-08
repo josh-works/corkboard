@@ -1,3 +1,4 @@
+<h1><%=@category.name%></h1>
 <% @category.services.each do |service| %>
   <ul>
     <li><%= link_to service.name, new_hire_project_path(service), id: "#{service.slug}" %></li>
