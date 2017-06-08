@@ -16,5 +16,6 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require twitter/bootstrap
 //= require turbolinks
+//= require autocomplete
 //= require_tree .
 //= require_tree ./channels
