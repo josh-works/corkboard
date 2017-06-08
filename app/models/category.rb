@@ -28,18 +28,12 @@ class Category < ApplicationRecord
 
 
   def self.get_industry_slug(industry_id)
-    case industry_id
-    when 1
-      "home-improvement"
-    when 2
-      "events"
-    when 3
-      "lessons"
-    when 4
-      "wellness"
-    when 5
-      "more"
-    end
+    slug = { 1 => "home-improvement",
+             2 => "events",
+             3 => "lessons",
+             4 => "wellness",
+             5 => "more" }
+    slug[industry_id]
   end
 
 end
