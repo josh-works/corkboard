@@ -4,7 +4,7 @@ $(document).ready(function(){
     $(".search-form").autocomplete({
       source: function( request, response ) {
          $.ajax({
-          url: "http://localhost:3000/api/v1/autocomplete",
+          url: "/api/v1/autocomplete",
           method: "GET",
           dataType: "json",
           data: { q: request.term },
