@@ -20,4 +20,13 @@ class Service < ApplicationRecord
     end
   end
 
+  def self.render_autocomplete(term)
+    names = Service.where(['lower(name) LIKE ?', "%#{term.downcase}%"])
+    .pluck(:name)
+    services = names.map do |name|
+      {value: "/hire/#{name.parameterize}/new",
+              label: name}
+    end
+    services
+  end
 end
