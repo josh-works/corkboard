@@ -10,6 +10,7 @@
 
 <%= link_to "See Projects in Progress", pro_dashboard_open_projects_path %><br><br>
 
-
-
-<%= @pro_reviews.total_average %>
+<div class="rating">
+      <h1>Reviews</h1>
+      <%= @pro_reviews.all %>
+</div>

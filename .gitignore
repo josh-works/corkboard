@@ -24,3 +24,6 @@
 
 # Ignore DS Store files
 *.DS_Store
+
+# Ignore fixture files
+/spec/fixtures/cassettes
