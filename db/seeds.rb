@@ -14,17 +14,18 @@ class Seed
     generate_reviews
   end
 
+  @zipps = [80012, 80014, 80110, 80111, 80123, 80202, 80203, 80204, 80205, 80206, 80207, 80209, 80210, 80211, 80212, 80214, 80216, 80218, 80219, 80220, 80221, 80222, 80223, 80224, 80226, 80227, 80230, 80231, 80232, 80235, 80236, 80237, 80238, 80239, 80246, 80247, 80249, 80264, 80290, 80293, 80294]
+
   def generate_users
     800.times do |n|
-      user = User.create(first_name: "Burt#{n}", last_name: "Reynolds", zipcode: "80203", phone_number: "5555554", email: "turdferguson#{n}@gmail.com", password: "password")
+      user = User.create(first_name: "Burt#{n}", last_name: "Reynolds", zipcode: @zipps.sample, phone_number: "5555554", email: "a#{n}@a.com", password: "a")
       puts "Created #{user.first_name}"
     end
   end
 
   def generate_pros
-    @zipps = [80012, 80014, 80110, 80111, 80123, 80202, 80203, 80204, 80205, 80206, 80207, 80209, 80210, 80211, 80212, 80214, 80216, 80218, 80219, 80220, 80221, 80222, 80223, 80224, 80226, 80227, 80230, 80231, 80232, 80235, 80236, 80237, 80238, 80239, 80246, 80247, 80249, 80264, 80290, 80293, 80294]
     100.times do |n|
-      pro = Pro.create(first_name: "Bob#{n}", last_name: "Ross", zipcode: @zipps.sample, phone_number: "5555555", email: "b#{n}@gmail.com", password: "password")
+      pro = Pro.create(first_name: "Bob#{n}", last_name: "Ross", zipcode: @zipps.sample, phone_number: "5555555", email: "b#{n}@b.com", password: "b")
       pro.create_pro_service(service_ids: [rand(230..256)], radius: rand(1..10))
       puts "Created #{pro.first_name}"
     end

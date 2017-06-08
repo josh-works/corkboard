@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show'
 
+  get '/generate_api_key', to: 'api_keys#show'
+
   get 'choose-account', as: 'choose_account', to: 'choose_account#index'
   get '/auth/facebook', as: 'facebook_login'
   get '/auth/:provider/callback', to: 'sessions#create'
