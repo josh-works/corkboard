@@ -50,6 +50,10 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blazer (1.8.0)
+      chartkick
+      rails
+      safely_block (>= 0.1.1)
     bootstrap_form (2.7.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -60,6 +64,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (2.2.4)
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.1.0)
@@ -80,6 +85,7 @@ GEM
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
     diff-lcs (1.3)
+    errbase (0.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -226,6 +232,8 @@ GEM
     rspec-support (3.6.0)
     rubyzip (1.2.1)
     safe_yaml (1.0.4)
+    safely_block (0.2.0)
+      errbase
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -298,6 +306,7 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
+  blazer
   bootstrap_form
   byebug
   capybara
@@ -340,4 +349,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.15.0
+   1.15.1
