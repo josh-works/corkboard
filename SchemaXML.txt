@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="1101" y="276" name="Users">
+</datatypes><table x="1034" y="313" name="Users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -67,7 +67,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1894" y="576" name="Categories">
+<table x="1957" y="664" name="Categories">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -82,7 +82,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="2050" y="521" name="Services">
+<table x="2113" y="609" name="Services">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -97,7 +97,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="870" y="570" name="roles">
+<table x="267" y="760" name="roles">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -108,8 +108,8 @@
 <part>id</part>
 </key>
 </table>
-<table x="820" y="465" name="user_roles">
-<row name="id" null="1" autoincrement="1">
+<table x="217" y="655" name="user_roles">
+<row name="id  (THESE TABLES NOT USED)" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="user_id" null="1" autoincrement="0">
@@ -121,7 +121,7 @@
 <default>NULL</default><relation table="roles" row="id" />
 </row>
 <key type="PRIMARY" name="">
-<part>id</part>
+<part>id  (THESE TABLES NOT USED)</part>
 </key>
 </table>
 <table x="1788" y="127" name="projects">
@@ -173,9 +173,6 @@
 <row name="amount" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="status" null="1" autoincrement="0">
-<datatype>ENUM</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -210,14 +207,11 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Users" row="id" />
 </row>
-<row name="NOT CREATED YET" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="1434" y="465" name="pro_services">
+<table x="1352" y="469" name="pro_services">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -231,7 +225,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1745" y="640" name="Industries">
+<table x="1808" y="728" name="Industries">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
