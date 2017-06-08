@@ -1,6 +1,7 @@
 class ProController < ApplicationController
   def show
     @pro = Pro.find(current_user.id)
+    @pro_reviews = ProReview.all(@pro.id)
   end
 
   def new

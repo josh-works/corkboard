@@ -3,10 +3,8 @@ require 'rails_helper'
 
 describe ProReviewService do
   it "returns raw review details" do
-    pro = create(:pro_user)
-    review = ProReview.new(body: "hey good job", rating: 5, pro: pro)
 
-    service = ProReviewService.new({rating: review.rating, body: review.body})
+    service = ProReviewService.new
     average = service.find_average
     count = service.find_count
 

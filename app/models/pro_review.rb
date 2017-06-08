@@ -7,4 +7,8 @@ class ProReview
     @pro_id = raw_rating[:pro_id]
   end
 
+  def self.all(pro)
+    service = ProReviewService.new.find_all(pro)
+  end
+
 end

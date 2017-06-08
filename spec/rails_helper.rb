@@ -6,10 +6,16 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rails'
-require 'webmock/rspec'
 require 'stub_omniauth.rb'
 require 'fake_sms.rb'
-# require 'vcr'
+require 'stub_helper'
+
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
+end
 #
 # VCR.configure do |config|
 #   config.cassette_library_dir = "spec/cassettes"
