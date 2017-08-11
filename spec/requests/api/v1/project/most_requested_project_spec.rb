@@ -2,7 +2,15 @@ require 'rails_helper'
 
 describe 'user can call api' do
 
-  xit "and see the most requested project" do
+  it "and see the most requested project" do
+
+    Category.create!(name: "bobert", industry: Industry.create!(name: "bob"))
+
+    @service = []
+    3.times do |n|
+      Service.create!(name: "service#{n}", category: Category.last, slug: "service-#{n}")
+      @service << Service.last
+    end
 
     5.times do |n|
       User.new(first_name: "Burt", last_name: "Reynolds", zipcode: "80203", phone_number: "5555554", email: "a#{n}@a.com", password: "a").save(validate: false)
@@ -14,9 +22,9 @@ describe 'user can call api' do
     end
 
     get "/api/v1/projects/most_requested_project"
-
+    # take off the .first from the sql query to allow for more than one key/value to be passed into the test for count checking
     expect(response).to be_success
-    projects = JSON.parse(response.body, :quirks_mode => true)
+    projects = JSON.parse(response.body)
     most_requested = projects.first
     least_requested = projects.last
 

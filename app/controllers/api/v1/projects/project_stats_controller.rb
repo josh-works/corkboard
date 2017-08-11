@@ -3,7 +3,7 @@ class Api::V1::Projects::ProjectStatsController < ApplicationController
   before_filter :restrict_access
   respond_to? :json
   # http_basic_authenticate_with name: "admin", password: "admin"
-
+ 
   def index
     render json: Project.most_bid_project
   end

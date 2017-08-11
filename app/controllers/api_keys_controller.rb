@@ -1,5 +1,5 @@
 class ApiKeysController < ApplicationController
-
+ 
   def show
     create
     @token = ApiKey.last.access_token
